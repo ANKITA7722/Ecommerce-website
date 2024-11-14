@@ -1,0 +1,19 @@
+
+#topmenu
+{
+ padding: 10px;
+ background-color: lightblue;
+}
+#icon{
+    text-align: right;
+    margin: 10px;
+}
+#Footer{
+    background-color: black;
+    color:red;
+    padding: 10px;
+    text-align: center;
+}
+#Home{
+    height: 450px;
+}
