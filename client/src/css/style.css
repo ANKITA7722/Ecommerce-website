@@ -1,19 +1,70 @@
 
-#topmenu
-{
- padding: 10px;
- background-color: lightblue;
+#topmenu {
+    position: sticky;
+    top: 0px;
+    background-color:lightpink; 
+    z-index: 1000; 
+    padding: 8px;   
 }
-#icon{
-    text-align: right;
-    margin: 10px;
+
+#icon {
+   align-content: end;
+   margin: 10px;
 }
+#Header{
+    position: sticky;
+    top: 0px;
+    z-index: 1000; 
+    padding: 8px; 
+   
+}  
+
 #Footer{
-    background-color: black;
-    color:red;
+    background-color: #88a3b1;
+    color:white;
     padding: 10px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    /* font-family: apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; */
+    font-family: 'Barlow', sans-serif ;
+
 }
-#Home{
-    height: 450px;
+#Home2 {
+   background-color: lightblue;
+   display: flex;
+   justify-content: space-around;
+   text-transform: capitalize;
+   font-style:normal;
+    
+   
 }
+
+hr {
+    border: 100px solid black; 
+    order: 2px solid white; 
+    height: 100px; 
+    width: 0; 
+    margin: 0 10px; 
+}
+
+#Home3 {
+    background-color: rgb(230, 241, 247); 
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    text-align: center;
+    padding: 20px;
+}
+
+#Home3 > div {
+    padding: 10px; 
+    
+} 
+
+#Home3 img {
+    max-width: 100px; 
+    border-radius:2%; 
+}
+
+
