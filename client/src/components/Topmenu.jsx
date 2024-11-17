@@ -18,7 +18,7 @@ const Topmenu = () => {
     const handleShow = () => setShow(true);
 
     const handleSubmit = () => {
-        const api = "http://localhost:8000/adminuser/usercheck"; // Corrected URL
+        const api = "http://localhost:8000/adminuser/usercheck";
         axios.post(api, { user: username, password: password }).then((res) => {
             console.log(res);
 

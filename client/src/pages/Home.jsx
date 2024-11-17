@@ -15,6 +15,8 @@ import Card from 'react-bootstrap/Card';
 
 import g4 from "../images/slide2.webp"
 
+import { MdOutlineLocalShipping } from "react-icons/md";
+
 const Home = () => {
     return (
         <>
@@ -51,7 +53,7 @@ const Home = () => {
             <div id='Home2'>
                 <p>handcrafted in india by the best Articense </p>
                 <hr style={{ border: "2px solid black", color: "black" }} height="50px" />
-                <p>14 days easy return </p>
+                <p><MdOutlineLocalShipping style={{height:"2000px"}}/><br/>14 days easy return </p>
                 <hr style={{ border: "2px solid black" }} height="50px" />
                 <p>constomization available</p>
                 <hr style={{ border: "2px solid black" }} height="50px" />
