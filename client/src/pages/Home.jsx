@@ -48,7 +48,7 @@ const Home = () => {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-
+ 
             </div>
             <div id='Home2'>
                 <p>handcrafted in india by the best Articense </p>
