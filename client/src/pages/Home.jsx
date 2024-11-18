@@ -17,6 +17,18 @@ import g4 from "../images/slide2.webp"
 
 import { MdOutlineLocalShipping } from "react-icons/md";
 
+
+
+import ring1 from "../images/jwell.webp";
+import neck from "../images/nec.webp";
+import neck1 from "../images/neck1.avif"
+import neck2 from "../images/neck2.avif"
+import bangle from "../images/bangle.avif"
+import bangle2 from "../images/bangle2.webp"
+import earing from "../images/earing.avif"
+import earing1 from "../images/earing1.avif"
+
+
 const Home = () => {
     return (
         <>
@@ -48,16 +60,72 @@ const Home = () => {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
- 
+
             </div>
             <div id='Home2'>
                 <p>handcrafted in india by the best Articense </p>
                 <hr style={{ border: "2px solid black", color: "black" }} height="50px" />
-                <p><MdOutlineLocalShipping style={{height:"2000px"}}/><br/>14 days easy return </p>
+                <p><MdOutlineLocalShipping style={{ fontSize: "10vh", alignItems: "center" }} /><br />14 days easy return </p>
                 <hr style={{ border: "2px solid black" }} height="50px" />
                 <p>constomization available</p>
                 <hr style={{ border: "2px solid black" }} height="50px" />
                 <p>Exclusive rewards on every order </p>
+
+            </div>
+            <div>
+                <div><h3>NEW ARIVAL</h3>
+                <p>Explore New Style of the Season</p>
+                </div>
+                <div id='sellingPage'>
+                <div className="hover-animation">
+                <Card style={{ width: '18rem', border: "none" }}>
+                    <img src={neck} style={{ width: '18rem', height:"290px"}} className="img-back"/>
+                    <img src={ring1} style={{ width: '18rem',height:"290px" }}/>
+                    <Card.Body style={{}}>
+                        <Card.Text> custer gold ring</Card.Text>
+                        <p>rs</p>
+                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                    </Card.Body>
+                </Card>
+                </div>
+
+
+                <div className="hover-animation">
+                <Card style={{ width: '18rem', border: "none" }}>
+                    <img src={neck2} style={{ width: '18rem', height:"290px"}} className="img-back"/>
+                    <img src={neck1} style={{ width: '18rem',height:"290px" }}/>
+                    <Card.Body style={{}}>
+                        <Card.Text> custer gold ring</Card.Text>
+                        <p>rs</p>
+                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                    </Card.Body>
+                </Card>
+                </div>
+
+                <div className="hover-animation">
+                <Card style={{ width: '18rem', border: "none" }}>
+                    <img src={bangle} style={{ width: '18rem', height:"290px"}} className="img-back"/>
+                    <img src={bangle2} style={{ width: '18rem',height:"290px" }}/>
+                    <Card.Body style={{}}>
+                        <Card.Text> custer gold ring</Card.Text>
+                        <p>rs</p>
+                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                    </Card.Body>
+                </Card>
+                </div>
+
+                <div className="hover-animation">
+                <Card style={{ width: '18rem', border: "none" }}>
+                    <img src={earing1} style={{ width: '18rem', height:"290px"}} className="img-back"/>
+                    <img src={earing} style={{ width: '18rem',height:"290px" }}/>
+                    <Card.Body style={{}}>
+                        <Card.Text> custer gold ring</Card.Text>
+                        <p>rs</p>
+                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                    </Card.Body>
+                </Card>
+                </div>
+                </div>
 
             </div>
             <div id='Home3'>
@@ -87,63 +155,63 @@ const Home = () => {
             <div id='home4'>
                 <div className='d1'><Button variant="primary" style={{ backgroundColor: "black", border: "none" }}>View All</Button>
                     <h2> Populler Collection</h2></div>
-                    
-                    <Card style={{ width: '23rem' }}>
-                        <Card.Img variant="top" src={g2} />
-                        <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
-                            <Card.Title style={{ textAlign: 'center' }}> Antique Collection</Card.Title>
-                        </Card.Body>
-                    </Card>
-                    
-                    <Card style={{ width: '23rem', height: '300px' }}>
-                        <Card.Img variant="top" src={g1} />
-                        <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                            <Card.Title style={{ textAlign: 'center' }}>Vication Collection</Card.Title>
-                        </Card.Body>
-                    </Card>
-                    
-                    <Card style={{ width: '23rem' }}>
-                        <Card.Img variant="top" src={g3} />
-                        <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                            <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
-                        </Card.Body>
-                    </Card>
-                    
+
+                <Card style={{ width: '23rem' }}>
+                    <Card.Img variant="top" src={g2} />
+                    <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
+                        <Card.Title style={{ textAlign: 'center' }}> Antique Collection</Card.Title>
+                    </Card.Body>
+                </Card>
+
+                <Card style={{ width: '23rem', height: '300px' }}>
+                    <Card.Img variant="top" src={g1} />
+                    <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
+                        <Card.Title style={{ textAlign: 'center' }}>Vication Collection</Card.Title>
+                    </Card.Body>
+                </Card>
+
+                <Card style={{ width: '23rem' }}>
+                    <Card.Img variant="top" src={g3} />
+                    <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
+                        <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
+                    </Card.Body>
+                </Card>
+
             </div>
             <div>
-            <Card.Img variant="top" src={g4} style={{marginTop:'20px', marginBottom:'20px'}}/>
+                <Card.Img variant="top" src={g4} style={{ marginTop: '20px', marginBottom: '20px' }} />
             </div>
 
             <div>
-            <Carousel style={{ width: '25rem'}}>
+                <Carousel style={{ width: '25rem' }}>
                     <Carousel.Item>
-                    <Card style={{ width: '23rem' }}>
-                        <Card.Img variant="top" src={g3} />
-                        <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                            <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
-                        </Card.Body>
-                    </Card>
+                        <Card style={{ width: '23rem' }}>
+                            <Card.Img variant="top" src={g3} />
+                            <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
+                                <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
+                            </Card.Body>
+                        </Card>
                     </Carousel.Item>
                     <Carousel.Item width="23rem">
-                    <Card style={{ width: '23rem' }}>
-                        <Card.Img variant="top" src={g3} />
-                        <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                            <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
-                        </Card.Body>
-                    </Card>
+                        <Card style={{ width: '23rem' }}>
+                            <Card.Img variant="top" src={g3} />
+                            <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
+                                <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
+                            </Card.Body>
+                        </Card>
                     </Carousel.Item>
                     <Carousel.Item>
-                    <Card style={{ width: '23rem' }}>
-                        <Card.Img variant="top" src={g3} />
-                        <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                            <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
-                        </Card.Body>
-                    </Card>
+                        <Card style={{ width: '23rem' }}>
+                            <Card.Img variant="top" src={g3} />
+                            <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
+                                <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
+                            </Card.Body>
+                        </Card>
                     </Carousel.Item>
                 </Carousel>
             </div>
-<div> Trending Style</div>
-        
+            <div> Trending Style</div>
+
 
         </>
     )

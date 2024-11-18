@@ -34,7 +34,7 @@ const Header=()=>{
               <NavDropdown.Item href="#action/3.1">Acccessorice</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link as={Link} to="">READY TO SHIP</Nav.Link>
-              <Nav.Link as={Link} to="">GIFT SHOP</Nav.Link>
+              <Nav.Link as={Link} to="giftshop">GIFT SHOP</Nav.Link>
               <Nav.Link as={Link} to="sale">SALE</Nav.Link>
             
           </Nav>

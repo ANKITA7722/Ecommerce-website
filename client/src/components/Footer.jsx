@@ -1,10 +1,9 @@
 import { TbPhoneCalling } from "react-icons/tb";
-import { MdOutgoingMail } from "react-icons/md";
+import { CgMail } from "react-icons/cg";
 const Footer = () => {
   return (
     <>
       <div id="Footer">
-        wwwmywebsite.com
         <div>
           <h3>Customer Service</h3>
           <p>Where's My Order?</p>
@@ -37,8 +36,8 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p>Where's My Order?</p>
           <p>wattsapp</p>
-          <p><TbPhoneCalling />7722843205</p>
-          <p><MdOutgoingMail />bobdeankita24@gmail.com</p>
+          <p><TbPhoneCalling style={{fontSize:"25px"}}/>7722843205</p>
+          <p><CgMail style={{fontSize:"25px"}}/>bobdeankita24@gmail.com</p>
 
         </div>
       </div>

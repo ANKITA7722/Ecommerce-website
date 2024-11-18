@@ -10,7 +10,7 @@
 #icon {
     align-content: end;
     margin: 10px;
-  
+
 }
 
 #Header {
@@ -22,15 +22,21 @@
 }
 
 #Footer {
+
     background-color: #88a3b1;
     color: white;
     padding: 10px;
-    text-align: center;
+    text-align: left;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    /* font-family: apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; */
+    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-family: 'Barlow', sans-serif;
 
+}
+
+#Footer div {
+    padding: 40px;
 }
 
 #Home2 {
@@ -39,6 +45,7 @@
     justify-content: space-around;
     text-transform: capitalize;
     font-style: normal;
+    flex-wrap: wrap;
 
 
 }
@@ -74,11 +81,80 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top:20px ;
+    margin-top: 20px;
     margin-bottom: 20px;
+
 }
 
 #home4 .d1 {
     width: 100%;
     text-align: center;
+}
+
+#home4 h2 {
+    font-family: 'Arial', sans-serif;
+    /* Use a custom font if available */
+    font-size: 24px;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Make the text bold */
+    color: #333;
+    /* Set text color */
+    text-transform: uppercase;
+    /* Convert text to uppercase */
+    letter-spacing: 1px;
+    /* Add some spacing between letters */
+    text-align: center;
+    /* Center the text */
+    margin: 20px 0;
+    /* Add space above and below the heading */
+    border-bottom: 2px solid #ddd;
+    /* Optional: Add a border underneath */
+    padding-bottom: 10px;
+    /* Space between text and border */
+}
+
+
+#sellingPage {
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.hover-animation {
+    width: '18rem';
+    position: relative;
+
+}
+
+.hover-animation img {
+    width: '18rem';
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 0.8s ease;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.img-back:hover {
+    opacity: 1;
+}
+
+#gift1{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
