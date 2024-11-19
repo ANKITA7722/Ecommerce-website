@@ -158,3 +158,32 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+/* ================================ */
+#adminHeader
+{
+    height: 100px;
+    background-color: lightblue;
+}
+
+#adminData
+{
+    display: flex;
+    justify-content: space-between;
+}
+#adminMenu
+{
+    width: 20%;
+    background-color: black;
+    color: white;
+
+}
+#adminContent
+{
+    padding-left: 30px;
+    width:80%
+}
+
+.menucolor
+{
+    color: whitesmoke;
+}

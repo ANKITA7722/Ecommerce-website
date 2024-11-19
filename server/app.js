@@ -18,7 +18,7 @@ app.use(bodyparser.json())
 app.use("/adminuser", adminRoute);
 
 mongoose.connect(process.env.DBCON).then(()=>{
-    console.log("DB Connection !!");
+    console.log("DB Connected.......!");
 })
 app.listen(PORT,()=>{
     console.log(`server run on ${PORT}`);
