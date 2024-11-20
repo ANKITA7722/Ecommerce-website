@@ -27,9 +27,59 @@ import bangle from "../images/bangle.avif"
 import bangle2 from "../images/bangle2.webp"
 import earing from "../images/earing.avif"
 import earing1 from "../images/earing1.avif"
-
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
+import { addToCard } from '../cardSlice';
+//=================================
+import floral from "../images/Goldjwell.jpg";
+import floral2 from "../images/Yearing1.webp";
+import floral3 from "../images/Neckles1.jpg";
+import icon from "../images/icon.webp"
 
 const Home = () => {
+    const [mydata, setMydata] = useState([]);
+    const dispatch = useDispatch();
+
+    const loadData = () => {
+        let api = "http://localhost:8000/product/showproduct";
+        axios.get(api).then((res) => {
+            setMydata(res.data);
+            console.log(res.data);
+        })
+    }
+
+    useEffect(() => {
+        loadData();
+    }, [])
+
+    const addcardData = (id, name, description, category, price, image) => {
+        dispatch(addToCard({ id: id, name: name, description: description, category: category, price: price, image: image }))
+    }
+
+    const ans = mydata.map((key) => {
+        return (
+            <>
+                <div id='sellingPage'>
+                    <div className="hover-animation">
+                        <Card style={{ width: '18rem', border: "none" }}>
+                            <img src={key.image} style={{ width: '18rem', height: "290px" }} className="img-back" />
+                            <img src={bangle} style={{ width: '18rem', height: "290px" }} />
+                            <Card.Body style={{}}>
+                                <Card.Title>{key.name}</Card.Title>
+                                <Card.Text>Rs. {key.price}/-</Card.Text>
+                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
+                                    onClick={() => { addcardData(key.id, key.name, key.description, key.category, key.price, key.image) }}>
+                                    Add to Card
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
+
+                </div>
+            </>
+        )
+    })
     return (
         <>
             <div id="Home">
@@ -63,68 +113,64 @@ const Home = () => {
 
             </div>
             <div id='Home2'>
-                <p>handcrafted in india by the best Articense </p>
-                <hr style={{ border: "2px solid black", color: "black" }} height="50px" />
-                <p><MdOutlineLocalShipping style={{ fontSize: "10vh", alignItems: "center" }} /><br />14 days easy return </p>
-                <hr style={{ border: "2px solid black" }} height="50px" />
-                <p>constomization available</p>
-                <hr style={{ border: "2px solid black" }} height="50px" />
-                <p>Exclusive rewards on every order </p>
-
+                <img src={icon} />
             </div>
-            <div>
-                <div><h3>NEW ARIVAL</h3>
-                <p>Explore New Style of the Season</p>
+            <div id='CardSection'>
+                <div id="NewArival"><h3>NEW ARIVAL</h3>
+                    <p>Explore New Style of the Season</p>
+                </div>
+                <div>
+                    {ans}
                 </div>
                 <div id='sellingPage'>
-                <div className="hover-animation">
-                <Card style={{ width: '18rem', border: "none" }}>
-                    <img src={neck} style={{ width: '18rem', height:"290px"}} className="img-back"/>
-                    <img src={ring1} style={{ width: '18rem',height:"290px" }}/>
-                    <Card.Body style={{}}>
-                        <Card.Text> custer gold ring</Card.Text>
-                        <p>rs</p>
-                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
-                    </Card.Body>
-                </Card>
-                </div>
+                    <div className="hover-animation">
+                        <Card style={{ width: '18rem', border: "none" }}>
+                            <img src={neck} style={{ width: '18rem', height: "290px" }} className="img-back" />
+                            <img src={ring1} style={{ width: '18rem', height: "290px" }} />
+                            <Card.Body style={{}}>
+                                <Card.Text> custer gold ring</Card.Text>
+                                <p>rs</p>
+                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
 
 
-                <div className="hover-animation">
-                <Card style={{ width: '18rem', border: "none" }}>
-                    <img src={neck2} style={{ width: '18rem', height:"290px"}} className="img-back"/>
-                    <img src={neck1} style={{ width: '18rem',height:"290px" }}/>
-                    <Card.Body style={{}}>
-                        <Card.Text> custer gold ring</Card.Text>
-                        <p>rs</p>
-                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
-                    </Card.Body>
-                </Card>
-                </div>
+                    <div className="hover-animation">
+                        <Card style={{ width: '18rem', border: "none" }}>
+                            <img src={neck2} style={{ width: '18rem', height: "290px" }} className="img-back" />
+                            <img src={neck1} style={{ width: '18rem', height: "290px" }} />
+                            <Card.Body style={{}}>
+                                <Card.Text> custer gold ring</Card.Text>
+                                <p>rs</p>
+                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
 
-                <div className="hover-animation">
-                <Card style={{ width: '18rem', border: "none" }}>
-                    <img src={bangle} style={{ width: '18rem', height:"290px"}} className="img-back"/>
-                    <img src={bangle2} style={{ width: '18rem',height:"290px" }}/>
-                    <Card.Body style={{}}>
-                        <Card.Text> custer gold ring</Card.Text>
-                        <p>rs</p>
-                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
-                    </Card.Body>
-                </Card>
-                </div>
+                    <div className="hover-animation">
+                        <Card style={{ width: '18rem', border: "none" }}>
+                            <img src={bangle} style={{ width: '18rem', height: "290px" }} className="img-back" />
+                            <img src={bangle2} style={{ width: '18rem', height: "290px" }} />
+                            <Card.Body style={{}}>
+                                <Card.Text> custer gold ring</Card.Text>
+                                <p>rs</p>
+                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
 
-                <div className="hover-animation">
-                <Card style={{ width: '18rem', border: "none" }}>
-                    <img src={earing1} style={{ width: '18rem', height:"290px"}} className="img-back"/>
-                    <img src={earing} style={{ width: '18rem',height:"290px" }}/>
-                    <Card.Body style={{}}>
-                        <Card.Text> custer gold ring</Card.Text>
-                        <p>rs</p>
-                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
-                    </Card.Body>
-                </Card>
-                </div>
+                    <div className="hover-animation">
+                        <Card style={{ width: '18rem', border: "none" }}>
+                            <img src={earing1} style={{ width: '18rem', height: "290px" }} className="img-back" />
+                            <img src={earing} style={{ width: '18rem', height: "290px" }} />
+                            <Card.Body style={{}}>
+                                <Card.Text> custer gold ring</Card.Text>
+                                <p>rs</p>
+                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                            </Card.Body>
+                        </Card>
+                    </div>
                 </div>
 
             </div>
@@ -145,6 +191,22 @@ const Home = () => {
                     <img src={nec} />
                     <p>Necklaces Sets</p>
                 </div>
+
+                <div>
+                    <img src={nec} />
+                    <p>Necklaces Sets</p>
+                </div>
+
+                <div>
+                    <img src={nec} />
+                    <p>Necklaces Sets</p>
+                </div>
+
+                <div>
+                    <img src={nec} />
+                    <p>Necklaces Sets</p>
+                </div>
+               
 
             </div>
             <div id='card'>
@@ -181,8 +243,9 @@ const Home = () => {
             <div>
                 <Card.Img variant="top" src={g4} style={{ marginTop: '20px', marginBottom: '20px' }} />
             </div>
+            {/* =================================================================================== */}
 
-            <div>
+            {/* <div>
                 <Carousel style={{ width: '25rem' }}>
                     <Carousel.Item>
                         <Card style={{ width: '23rem' }}>
@@ -209,8 +272,35 @@ const Home = () => {
                         </Card>
                     </Carousel.Item>
                 </Carousel>
+            </div> */}
+
+            <div id='home4'>
+                <div className='d1'>
+                    <h2> Trending Style</h2>
+                </div>
+
+                <Card style={{ width: '23rem', height: "150px" }}>
+                    <Card.Img variant="top" src={floral} style={{ height: "350px" }} />
+                    <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
+                        <Card.Title style={{ textAlign: 'center' }}> Gold Collection</Card.Title>
+                    </Card.Body>
+                </Card>
+
+                <Card style={{ width: '23rem' }}>
+                    <Card.Img variant="top" src={floral2} style={{ height: "350px" }} />
+                    <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
+                        <Card.Title style={{ textAlign: 'center' }}>Earring Collection</Card.Title>
+                    </Card.Body>
+                </Card>
+
+                <Card style={{ width: '23rem', height: "200px" }}>
+                    <Card.Img variant="top" src={floral3} />
+                    <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
+                        <Card.Title style={{ textAlign: 'center' }}>Festive Jwellery</Card.Title>
+                    </Card.Body>
+                </Card>
+
             </div>
-            <div> Trending Style</div>
 
 
         </>

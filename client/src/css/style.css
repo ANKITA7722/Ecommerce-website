@@ -1,3 +1,9 @@
+#HeaderPart{
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+
 #topmenu {
     position: sticky;
     top: 0px;
@@ -13,13 +19,7 @@
 
 }
 
-#Header {
-    position: sticky;
-    top: 0px;
-    z-index: 1000;
-    padding: 8px;
 
-}
 
 #Footer {
 
@@ -39,14 +39,9 @@
     padding: 40px;
 }
 
-#Home2 {
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-around;
-    text-transform: capitalize;
-    font-style: normal;
-    flex-wrap: wrap;
-
+#Home2 img{
+  width: 100%;
+  padding-top: 10px;
 
 }
 
@@ -186,4 +181,20 @@ hr {
 .menucolor
 {
     color: whitesmoke;
+}
+
+#CardSection{
+     background-color:  rgb(245, 206, 212);
+     margin-bottom: 20px;
+}
+#NewArival{
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    font-style: arial;
+}
+
+#CardSection div{
+margin-top: 10px;
+margin-bottom: 10px;
 }

@@ -8,6 +8,7 @@ import InsertProduct from "./admin/InsertProduct";
 
 
 
+
 const App = () => {
   return (
     <>
@@ -17,7 +18,8 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="home" element={<Home/>}/>
             <Route path="/admin" element={<AdminDashboard/>}/>
-            <Route path="/admin/insertpro" element={<InsertProduct />} />
+            <Route path="/admin/insertproduct" element={<InsertProduct/>}/>
+            
             <Route path="sale" element={<Sale/>}/>
             <Route path="giftshop" element={<GiftShop/>}/>
           </Route>
