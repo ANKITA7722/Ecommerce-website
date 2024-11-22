@@ -30,7 +30,8 @@ import earing1 from "../images/earing1.avif"
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { addToCard } from '../cardSlice';
+import { addToCart } from '../cardSlice'; // Correct import
+
 //=================================
 import floral from "../images/Goldjwell.jpg";
 import floral2 from "../images/Yearing1.webp";
@@ -54,29 +55,22 @@ const Home = () => {
     }, [])
 
     const addcardData = (id, name, description, category, price, image) => {
-        dispatch(addToCard({ id: id, name: name, description: description, category: category, price: price, image: image }))
+        dispatch(addToCart({ id: id, name: name, description: description, category: category, price: price, image: image, qnty:1 }))
     }
 
     const ans = mydata.map((key) => {
         return (
             <>
-                <div id='sellingPage'>
-                    <div className="hover-animation">
-                        <Card style={{ width: '18rem', border: "none" }}>
-                            <img src={key.image} style={{ width: '18rem', height: "290px" }} className="img-back" />
-                            <img src={bangle} style={{ width: '18rem', height: "290px" }} />
-                            <Card.Body style={{}}>
-                                <Card.Title>{key.name}</Card.Title>
-                                <Card.Text>Rs. {key.price}/-</Card.Text>
-                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
-                                    onClick={() => { addcardData(key.id, key.name, key.description, key.category, key.price, key.image) }}>
-                                    Add to Card
-                                </Button>
-                            </Card.Body>
-                        </Card>
-                    </div>
-
-                </div>
+               <Card style={{ width: '18rem'}}>
+                    <Card.Img variant="top" src={key.image} />
+                    <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
+                        <Card.Title style={{ textAlign: 'center' }}> {key.name}</Card.Title>
+                        <Card.Text> RS. {key.price}</Card.Text>
+                        <Button  style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
+                        onClick={()=>{addcardData(key._id,key.name,key.description,key.category,key.price,key.image)}}>
+                            Add to Card</Button>
+                    </Card.Body>
+                </Card>
             </>
         )
     })
@@ -119,7 +113,7 @@ const Home = () => {
                 <div id="NewArival"><h3>NEW ARIVAL</h3>
                     <p>Explore New Style of the Season</p>
                 </div>
-                <div>
+                <div id='CardCloudImg'>
                     {ans}
                 </div>
                 <div id='sellingPage'>

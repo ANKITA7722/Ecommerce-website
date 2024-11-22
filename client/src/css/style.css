@@ -1,3 +1,14 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+   
+}
+body{
+    overflow-x: hidden;
+    width: 100%;
+}
+
 #HeaderPart{
     position: sticky;
     z-index: 2;
@@ -18,9 +29,6 @@
     margin: 10px;
 
 }
-
-
-
 #Footer {
 
     background-color: #88a3b1;
@@ -88,27 +96,18 @@ hr {
 
 #home4 h2 {
     font-family: 'Arial', sans-serif;
-    /* Use a custom font if available */
+    
     font-size: 24px;
-    /* Adjust font size */
     font-weight: bold;
-    /* Make the text bold */
     color: #333;
-    /* Set text color */
     text-transform: uppercase;
-    /* Convert text to uppercase */
     letter-spacing: 1px;
-    /* Add some spacing between letters */
     text-align: center;
-    /* Center the text */
     margin: 20px 0;
-    /* Add space above and below the heading */
     border-bottom: 2px solid #ddd;
-    /* Optional: Add a border underneath */
     padding-bottom: 10px;
-    /* Space between text and border */
 }
-
+/* ==================================================== */
 
 #sellingPage {
     display: grid;
@@ -197,4 +196,49 @@ hr {
 #CardSection div{
 margin-top: 10px;
 margin-bottom: 10px;
+}
+#CardCloudImg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* ==================================== */
+#collection1 img{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#collection2{
+    display: flex;
+    justify-content:space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+#collection2 button{
+    padding: 7px;
+    border-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#collection2 button:hover{
+    cursor: pointer;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+#collection2 h2{
+    margin-top: 20px;
+    font-style:arial;
+}
+#collection3{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#collection3 img{
+    height: 500px;
+
 }

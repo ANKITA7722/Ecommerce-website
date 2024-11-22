@@ -4,12 +4,7 @@ import { useState } from 'react';
 import axios from "axios";
 
 const InsertProduct = () => {
-  const [input, setInput] = useState({
-    name: '',
-    description: '',
-    category: 'Men',
-    price: ''
-  });
+  const [input, setInput] = useState({});
 
   const [myimage, setMyimage] = useState(null);
 
@@ -63,9 +58,10 @@ const InsertProduct = () => {
         <Form.Group className="mb-3" controlId="formProductCategory">
           <Form.Label>Select Category</Form.Label>
           <Form.Select name="category" value={input.category}  onChange={handleInput}>
-            <option value="Men">Men</option>
-            <option value="Women">Women</option>
-            <option value="Kids">Kids</option>
+            <option value="">Neckless</option>
+            <option value="Women">Earring</option>
+            <option value="Kids">Rings</option>
+            <option value="Kids">Bangles</option>
           </Form.Select>
         </Form.Group>
 

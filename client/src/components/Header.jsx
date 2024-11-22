@@ -26,16 +26,17 @@ const Header=()=>{
               <NavDropdown.Item href="#action/3.1">Acccessorice</NavDropdown.Item>
               </NavDropdown>
 
-              <NavDropdown title="COLLECTION" id="basic-nav-dropdown">
+              <NavDropdown title="COLLECTION" id="basic-nav-dropdown" as={Link} to="collecton">
               <NavDropdown.Item href="#action/3.1">Necklace</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Long Necklace Sets </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Pandant Sets</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.4">Chocker Sets</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Acccessorice</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={Link} to="">READY TO SHIP</Nav.Link>
+              <Nav.Link as={Link} to="radytoship">READY TO SHIP</Nav.Link>
               <Nav.Link as={Link} to="giftshop">GIFT SHOP</Nav.Link>
               <Nav.Link as={Link} to="sale">SALE</Nav.Link>
+              <Nav.Link as={Link} to="cart">MyCart</Nav.Link>
             
           </Nav>
         </Navbar.Collapse>

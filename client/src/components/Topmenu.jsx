@@ -3,6 +3,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -16,6 +17,18 @@ const Topmenu = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+
+
+    const mycard= useSelector(state=>state.mycard.cart);
+    console.log(mycard);
+
+
+    const cartPage=()=>{
+        navigate("/cart");
+
+        
+    }
 
     const handleSubmit = () => {
         const api = "http://localhost:8000/adminuser/usercheck";
@@ -33,10 +46,19 @@ const Topmenu = () => {
         });
     };
 
+
+    const cartLen = mycard.length;
     return (
         <>
             <div id="topmenu">
-                <TiShoppingCart id="icon" />
+
+                <span id="carticon">{cartLen}</span>
+                <a href="#" onClick={cartPage}>
+                    <TiShoppingCart id="icon" />
+                </a>
+                
+
+
                 <a href="#" onClick={handleShow}>
                     <FaUserCircle id="icon" />
                 </a>
