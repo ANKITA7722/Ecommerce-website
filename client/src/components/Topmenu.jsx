@@ -18,17 +18,13 @@ const Topmenu = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
-
-    const mycard= useSelector(state=>state.mycard.cart);
+    const mycard = useSelector(state => state.mycard.cart);
     console.log(mycard);
 
-
-    const cartPage=()=>{
+    const cartPage = () => {
         navigate("/cart");
-
-        
     }
+
 
     const handleSubmit = () => {
         const api = "http://localhost:8000/adminuser/usercheck";
@@ -46,7 +42,6 @@ const Topmenu = () => {
         });
     };
 
-
     const cartLen = mycard.length;
     return (
         <>
@@ -56,7 +51,6 @@ const Topmenu = () => {
                 <a href="#" onClick={cartPage}>
                     <TiShoppingCart id="icon" />
                 </a>
-                
 
 
                 <a href="#" onClick={handleShow}>
@@ -71,21 +65,13 @@ const Topmenu = () => {
 
                 <Modal.Body>
                     <div>
-                        Enter Admin:
-                        <input
-                            type="text"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
+                         Enter Admin: <input type="text" value={username}
+                            onChange={(e) => setUsername(e.target.value)}/>
                     </div>
                     <br />
-                    <div>
-                        Enter Password:
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                    <div> 
+                        Enter Password: <input type="password" value={password}
+                            onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                 </Modal.Body>
 

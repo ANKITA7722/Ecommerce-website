@@ -19,19 +19,27 @@ const Header=()=>{
             
             <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="JWELLERY" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Necklace</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Long Necklace Sets </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Pandant Sets</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Chocker Sets</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">Acccessorice</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="neckless">Necklace</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="longneckless">Long Necklace Sets </NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="">Pandant Sets</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="choker">Chocker Sets</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="">Acccessorice</NavDropdown.Item>
+
               </NavDropdown>
 
               <NavDropdown title="COLLECTION" id="basic-nav-dropdown" as={Link} to="collecton">
-              <NavDropdown.Item href="#action/3.1">Necklace</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Long Necklace Sets </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Pandant Sets</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Chocker Sets</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">Acccessorice</NavDropdown.Item>
+              <NavDropdown.Item >Necklace</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="">Long Necklace Sets </NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="">Pandant Sets</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="choker">Chocker Sets</NavDropdown.Item>
+              <NavDropdown.Item   as={Link} to="Mangalsutra">Mangalsutra</NavDropdown.Item>
+              <NavDropdown.Item   as={Link} to="mangtika">Maangtika</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="ring">Rings</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="bangle">Bangles</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="Waistbands">Waistbands</NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to=""></NavDropdown.Item>
+              <NavDropdown.Item  as={Link} to="">Acccessorice</NavDropdown.Item>
+              
               </NavDropdown>
               <Nav.Link as={Link} to="radytoship">READY TO SHIP</Nav.Link>
               <Nav.Link as={Link} to="giftshop">GIFT SHOP</Nav.Link>

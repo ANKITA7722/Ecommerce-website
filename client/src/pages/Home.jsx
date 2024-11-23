@@ -2,8 +2,16 @@ import Carousel from 'react-bootstrap/Carousel';
 import first from "../images/fourth.webp";
 import second from "../images/s8.webp";
 import third from "../images/third.webp";
-import nec from "../images/Necklace.webp";
+
+
+import nec from "../images/Earrings2.avif";
 import choker from "../images/Choker.avif";
+import c1 from "../images/Ring2.avif";
+import c2 from "../images/Bridal.avif";
+import c3 from "../images/Bangles5.webp";
+import c4 from "../images/Mangalsutra.avif";
+import c5 from "../images/Maangtika.avif";
+
 // import collegcol from "../images/collegecollection.webp";
 
 import g1 from "../images/g2.webp"
@@ -30,17 +38,19 @@ import earing1 from "../images/earing1.avif"
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { addToCart } from '../cardSlice'; // Correct import
+import { addToCart } from '../cardSlice'; 
 
 //=================================
 import floral from "../images/Goldjwell.jpg";
 import floral2 from "../images/Yearing1.webp";
 import floral3 from "../images/Neckles1.jpg";
 import icon from "../images/icon.webp"
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const [mydata, setMydata] = useState([]);
     const dispatch = useDispatch();
+    const navigate= useNavigate();
 
     const loadData = () => {
         let api = "http://localhost:8000/product/showproduct";
@@ -62,7 +72,11 @@ const Home = () => {
         return (
             <>
                <Card style={{ width: '18rem'}}>
-                    <Card.Img variant="top" src={key.image} />
+                <a href="#" onClick={()=>{navigate(`/prodetail/${key._id}`)}}>
+                     <Card.Img variant="top" src={key.image} />
+                </a>
+                   
+
                     <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
                         <Card.Title style={{ textAlign: 'center' }}> {key.name}</Card.Title>
                         <Card.Text> RS. {key.price}</Card.Text>
@@ -113,9 +127,12 @@ const Home = () => {
                 <div id="NewArival"><h3>NEW ARIVAL</h3>
                     <p>Explore New Style of the Season</p>
                 </div>
+
+
                 <div id='CardCloudImg'>
                     {ans}
                 </div>
+                
                 <div id='sellingPage'>
                     <div className="hover-animation">
                         <Card style={{ width: '18rem', border: "none" }}>
@@ -171,34 +188,34 @@ const Home = () => {
             <div id='Home3'>
                 <div>
                     <img src={nec} />
-                    <p>Necklaces Sets</p>
+                    <p>Earring Sets</p>
                 </div>
                 <div>
                     <img src={choker} />
-                    <p>Necklaces Sets</p>
+                    <p>Choker Sets</p>
                 </div>
                 <div>
-                    <img src={nec} />
-                    <p>Necklaces Sets</p>
+                    <img src={c1} />
+                    <p>Rings</p>
                 </div>
                 <div>
-                    <img src={nec} />
-                    <p>Necklaces Sets</p>
-                </div>
-
-                <div>
-                    <img src={nec} />
-                    <p>Necklaces Sets</p>
+                    <img src={c2} />
+                    <p>Bridal Sets</p>
                 </div>
 
                 <div>
-                    <img src={nec} />
-                    <p>Necklaces Sets</p>
+                    <img src={c3} />
+                    <p>Bangles</p>
                 </div>
 
                 <div>
-                    <img src={nec} />
-                    <p>Necklaces Sets</p>
+                    <img src={c4} />
+                    <p>Mangalsutra</p>
+                </div>
+
+                <div>
+                    <img src={c5} />
+                    <p>Maangtika</p>
                 </div>
                
 
