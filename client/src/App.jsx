@@ -18,6 +18,7 @@ import Earring from "./pages/Earrings";
 import Rings from "./pages/Rings";
 import Bangles from "./pages/Bangles";
 import Waistbands from "./pages/Waistbands";
+import Search from "./pages/Search";
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
             <Route path="ring" element={<Rings />} />
             <Route path="bangle" element={<Bangles />} />
             <Route path="Waistbands" element={<Waistbands />} />
+            <Route path="search" element={<Search />} />
           </Route>
           <Route>
             <Route path="/admin" element={<AdminDashboard />} />

@@ -23,7 +23,7 @@ import Card from 'react-bootstrap/Card';
 
 import g4 from "../images/slide2.webp"
 
-import { MdOutlineLocalShipping } from "react-icons/md";
+
 
 
 
