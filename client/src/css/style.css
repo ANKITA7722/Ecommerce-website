@@ -278,3 +278,21 @@ margin-bottom: 10px;
     padding: 10px;
     width: 80%;
 }
+/* ============================================= */
+#proDetail{
+    display:flex;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(to right, #f9f9f9, #e0eafc);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#proDetail img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+
+#proImage{
+
+}

@@ -10,20 +10,29 @@
  import a1 from "../images/ancklet.webp"
  import a2 from "../images/armles.webp"
  import a3 from "../images/kamarband.webp"
+ import { useNavigate } from "react-router-dom"
  
  
  const Collection=()=>{
+    const navigate = useNavigate();
     return(
         <>
         <div id="collection1">
+            <a href="#"onClick={()=>{navigate("/longneckless")}}>
             <img src={LongNeck}/>
+            </a>
+            
         </div>
 
         <div id="collection1">
+        <a href="#"onClick={()=>{navigate("/neckless")}}>
             <img src={Neck1}/>
+            </a>
         </div>
         <div id="collection1">
+        <a href="#"onClick={()=>{navigate("/bangle")}}>
             <img src={Neck2}/>
+            </a>
         </div>
         <div id="collection2">
             <div>
@@ -39,19 +48,27 @@
             </div>
         </div>
         <div id="collection1">
+        <a href="#"onClick={()=>{navigate("/earring")}}>
             <img src={Neck3}/>
+            </a>
         </div>
 
         <div id="collection1">
+        <a href="#"onClick={()=>{navigate("/ring")}}>
             <img src={Neck6}/>
+            </a>
         </div>
 
 
         <div id="collection1">
+        <a href="#"onClick={()=>{navigate("/choker")}}>
             <img src={Neck4}/>
+            </a>
         </div>
         <div id="collection1">
+        <a href="#"onClick={()=>{navigate("/")}}>
             <img src={Neck5}/>
+            </a>
         </div>
 
         <div id="collection3">
