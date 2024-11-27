@@ -23,15 +23,22 @@ const productDetail=async(req,res)=>{
     res.send(Data);
 }
 
-const showProductByCategory=async(req,res)=>{
+const showProductByCategory = async(req,res)=>{
 const Data=await ProductModel.find(req.query);
 res.send(Data);
 
+}
+const searchProduct=async(req,res)=>{
+    let proname = req.query.product;
+    console.log(proname);
+    const Data = await ProductModel.find({"name":{$regex:proname,$option:'i'}})
+    res.send(Data);
 }
 
 module.exports={
     productSave,
     showProduct,
     productDetail,
-    showProductByCategory
+    showProductByCategory,
+    searchProduct
 }

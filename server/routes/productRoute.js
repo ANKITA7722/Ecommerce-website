@@ -6,7 +6,7 @@ const route= express.Router();
  route.get("/showproduct",ProductController.showProduct);
  route.post("/productdetail",ProductController.productDetail);
  route.get("/showproductbycategory",ProductController.showProductByCategory);
+ route.get("/searchproduct",ProductController.searchProduct);
 
 
-
-module.exports=route;
+module.exports = route;

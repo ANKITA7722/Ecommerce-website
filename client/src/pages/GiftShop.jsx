@@ -46,7 +46,14 @@ const GiftShop=()=>{
         </div>
 
         <div id='gift4'>
- 
+            <div>
+                <img src=''/>
+            </div>
+            <div>
+                <h1>The joy of gifting</h1>
+                <p>celebrate every moment with Diamonddelight</p>
+                <button>shop now</button>
+            </div>
 
         </div>
         </>
