@@ -19,6 +19,7 @@ import Rings from "./pages/Rings";
 import Bangles from "./pages/Bangles";
 import Waistbands from "./pages/Waistbands";
 import Search from "./pages/Search";
+import CheckOut from "./pages/CheckOut";
 
 
 
@@ -48,6 +49,7 @@ const App = () => {
             <Route path="bangle" element={<Bangles />} />
             <Route path="Waistbands" element={<Waistbands />} />
             <Route path="search" element={<Search />} />
+            <Route path="checkout" element={<CheckOut/>} />
           </Route>
           <Route>
             <Route path="/admin" element={<AdminDashboard />} />
