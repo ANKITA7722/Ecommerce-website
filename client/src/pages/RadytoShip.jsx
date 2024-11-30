@@ -7,6 +7,7 @@ import g2 from "../images/g4.avif"
 
 
 const RadytoShip=()=>{
+
     return(
         <>
         <h1> collection</h1>
