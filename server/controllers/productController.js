@@ -35,6 +35,8 @@ const searchProduct=async(req,res)=>{
     res.send(Data);
 }
 
+
+
 module.exports={
     productSave,
     showProduct,

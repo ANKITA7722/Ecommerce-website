@@ -12,7 +12,7 @@ const LongNeckless = () => {
     const navigate = useNavigate();
 
     const loadData = () => {
-        let api = "http://localhost:8000/product/showproductbycategory?category=Long Necklaces";
+        let api = "http://localhost:8000/product/showproductbycategory?category=Longnecklaces";
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log(res.data);
