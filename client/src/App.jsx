@@ -20,6 +20,7 @@ import Bangles from "./pages/Bangles";
 import Waistbands from "./pages/Waistbands";
 import Search from "./pages/Search";
 import CheckOut from "./pages/CheckOut";
+import ShopProduct from "./pages/ShopProduct";
 
 
 
@@ -50,6 +51,7 @@ const App = () => {
             <Route path="Waistbands" element={<Waistbands />} />
             <Route path="search" element={<Search />} />
             <Route path="checkout" element={<CheckOut/>} />
+            <Route path="shop" element={<ShopProduct/>} />
           </Route>
           <Route>
             <Route path="/admin" element={<AdminDashboard />} />

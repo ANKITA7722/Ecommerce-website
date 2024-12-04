@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../cardSlice";
 import Button from 'react-bootstrap/Button';
 
+
 const ProductDetail = () => {
     const { proid } = useParams();
     const [mydata, setMydata] = useState({});
@@ -31,9 +32,9 @@ const ProductDetail = () => {
 
     
     return (
-        <div id="proDetail" style={{ display: "flex", gap: "20px", padding: "20px" }}>
+        <div id="proDetail" >
             <div id="proImage">
-                {mydata.image ? (<img src={mydata.image} alt={mydata.name} style={{ width: "400px", height: "400px" }} />) :
+                {mydata.image ? (<img src={mydata.image} alt={mydata.name}  />) :
                  (<p>Loading image...</p>)}
 
                  <div>
@@ -44,16 +45,29 @@ const ProductDetail = () => {
             </div>
 
             <div id="prodata">
-                <h2 style={{ color: 'blue' }}>{mydata.name}</h2>
-                <h5>Product Detail: {mydata.description}</h5>
-                <h4 style={{ color: 'red' }}>Price: {mydata.price}</h4>
+                <h2>{mydata.name}</h2>
+                <h4> Rs. {mydata.price}</h4>
                 <h5>Ships in 7-10 business days</h5>
-                <h6>This Product is for: {mydata.category}</h6>
+                <h6> {mydata.category}</h6>
+
 
                 <Button style={{ marginTop: "20px" }} onClick={() => {addcardData(mydata._id, mydata.name, mydata.description, mydata.category, mydata.price, mydata.image);}}
                     disabled={!mydata._id} >
                     Add to Cart
                 </Button>
+
+                <h5>Product Detail: {mydata.description}</h5>
+                <div>
+                    <h3>Jwellery Care</h3>
+                    <p>Here are some of the best ways to care for your artificial jewellery:</p>
+                    <ul>
+                        <li>Keep it dry away and from moisture</li>
+                        <li>Take it off after use</li>
+                        <li>Store it carefully in a jewellery box</li>
+                        <li>Clean it after use</li>
+                    </ul>
+                </div>
+                
             </div>
         </div>
     );

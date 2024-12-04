@@ -24,16 +24,28 @@ const productDetail=async(req,res)=>{
 }
 
 const showProductByCategory = async(req,res)=>{
-const Data=await ProductModel.find(req.query);
+    const {category} =req.query
+const Data = await ProductModel.find({category:category});
 res.send(Data);
 
 }
+
 const searchProduct=async(req,res)=>{
     let proname = req.query.product;
     console.log(proname);
     const Data = await ProductModel.find({"name":{$regex:proname,$option:'i'}})
     res.send(Data);
 }
+
+const shopProduct=async(req, res)=>{
+    const {lprice, hprice, bangle, ring,choker }=req.body;
+    console.log(lprice, hprice, bangle, ring, choker);
+ 
+    const Data= await ProductModel.find({$and:[{price:{$gte:lprice}}, {price:{$lte:hprice}}, {$or:[{"category":bangle}, {"category": ring}, {"category":choker}]}   ]});
+    console.log(Data);
+    res.send(Data);
+ }
+ 
 
 
 
@@ -42,5 +54,7 @@ module.exports={
     showProduct,
     productDetail,
     showProductByCategory,
-    searchProduct
+    searchProduct,
+    shopProduct
+
 }

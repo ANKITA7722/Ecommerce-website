@@ -47,6 +47,7 @@ const Header = () => {
                 <Nav.Link as={Link} to="sale">SALE</Nav.Link>
                 <Nav.Link as={Link} to="cart">MyCart</Nav.Link>
                 <Nav.Link as={Link} to="search">Search</Nav.Link>
+                <Nav.Link as={Link} to="shop">Shop</Nav.Link>
 
               </Nav>
             </Navbar.Collapse>
