@@ -53,7 +53,7 @@ const Home = () => {
     const navigate= useNavigate();
 
     const loadData = () => {
-        let api = "http://localhost:8000/product/showproduct";
+        let api = "http://localhost:8000/product/?type=new";
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log(res.data);
@@ -90,6 +90,7 @@ const Home = () => {
     })
     return (
         <>
+        {/* carousel section............................................................ */}
             <div id="Home">
                 <Carousel>
                     <Carousel.Item>
@@ -118,21 +119,22 @@ const Home = () => {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-
+{/* icon ................................................................................... */}
             </div>
             <div id='Home2'>
                 <img src={icon} />
             </div>
+ {/* New ariival................................................................................... */}
             <div id='CardSection'>
                 <div id="NewArival"><h3>NEW ARIVAL</h3>
                     <p>Explore New Style of the Season</p>
                 </div>
 
-
+{/* output......................................................................................... */}
                 <div id='CardCloudImg'>
                     {ans}
                 </div>
-                
+  {/*  .............................................................................................. */}
                 <div id='sellingPage'>
                     <div className="hover-animation">
                         <Card style={{ width: '18rem', border: "none" }}>

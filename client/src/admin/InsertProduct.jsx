@@ -43,8 +43,9 @@ const InsertProduct = () => {
 
   return (
     <>
+    <div id='insertpage'>
       <h1>Insert New Product</h1>
-      <Form style={{ width: '300px' }} onSubmit={handleSubmit}>
+      <Form style={{ width: '600px' }} onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formProductName">
           <Form.Label>Enter Product Name</Form.Label>
           <Form.Control type="text" name="name" value={input.name} onChange={handleInput} />
@@ -84,10 +85,19 @@ const InsertProduct = () => {
           <Form.Control type="file" name="file" onChange={handleImage}/>
         </Form.Group>
 
+        <Form.Group className="mb-3" controlId="formProductCategory">
+          <Form.Label>Select type of product </Form.Label>
+          <Form.Select name="type" value={input.type}  onChange={handleInput}>
+            <option value="new">new</option>
+            <option value="old">old</option>
+            </Form.Select>
+            </Form.Group>
+
         <Button variant="primary" type="submit" onClick={handleSubmit}>
           Submit
         </Button>
       </Form>
+      </div>
     </>
   );
 };

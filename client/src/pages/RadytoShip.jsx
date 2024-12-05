@@ -1,5 +1,7 @@
 import ReactPlayer from 'react-player'
 import vedio from "../images/bde.mp4"
+import vedio1 from "../images/Bidv.mp4"
+import vedio2 from "../images/BIPM.mp4"
 
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
@@ -10,8 +12,13 @@ const RadytoShip=()=>{
 
     return(
         <>
-        <h1> collection</h1>
-        <ReactPlayer controls={true} url={vedio} loop={true} />
+       
+        <div id='vedioplayer' >
+        <ReactPlayer controls={true} url={vedio} loop={true} playing={true} muted={true} />
+        <ReactPlayer controls={true} url={vedio1} loop={true} playing={true} muted={true} />
+        <ReactPlayer controls={true} url={vedio2} loop={true}  playing={true} muted={true} />
+        </div>
+
         <Carousel>
       <Carousel.Item>
       <Card style={{ width: '23rem' }}>

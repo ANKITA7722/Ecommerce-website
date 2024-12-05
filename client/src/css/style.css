@@ -7,6 +7,7 @@
 body{
     overflow-x: hidden;
     width: 100%;
+   
 }
 
 #HeaderPart{
@@ -188,10 +189,7 @@ hr {
     color: whitesmoke;
 }
 
-#CardSection{
-     background-color:  rgb(245, 206, 212);
-     margin-bottom: 20px;
-}
+
 #NewArival{
     text-align: center;
     background-color: white;
@@ -362,3 +360,57 @@ margin-bottom: 10px;
     width: 50%;
 }
 /* ======================================== */
+#vedioplayer{
+    
+    display: flex;
+    justify-content: space-around;
+    column-gap: 20px;
+}
+#vedioplayer .ReactPlayer{
+    
+}
+
+#CardSection {
+    background-color: #f9f9f9; /* Light background to make content stand out */
+    padding: 50px 20px; /* Spacing around the section */
+    text-align: center; /* Center align text */
+    border-radius: 8px; /* Slight rounding for a soft look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  }
+  
+  #NewArival h3 {
+    font-size: 2rem; /* Large font for prominence */
+    color: #b76e79; /* Rose gold for a luxurious feel */
+    font-weight: bold;
+    letter-spacing: 2px; /* Space letters for elegance */
+    margin-bottom: 10px; /* Space below the heading */
+    text-transform: uppercase; /* Make the text all caps */
+  }
+  
+  #NewArival p {
+    font-size: 1.2rem; /* Slightly smaller than the heading */
+    color: #333333; /* Dark grey for contrast and readability */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: italic; /* Italic for a sophisticated touch */
+  }
+  /*=================================================================  */
+  #insertpage{
+    background-image: url(../images/b1.jpg);
+    background-size: cover;
+    padding-left: 25%;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   color: white;
+  }
+  #insertpage h1{
+    text-transform: capitalize;
+    font-style: unset;
+  }
+
+  #insertpage button{
+    background-color: #e6415a;
+    border: none;
+    text-align: center;
+    width: 100%;
+  }

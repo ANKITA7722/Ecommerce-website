@@ -10,7 +10,7 @@ const AdminDashboard=()=>{
               <div id="adminMenu">
 
 
-               <Link to="insertproduct" className="menucolor"> Insert Product </Link>
+               <Link to="insertproduct" className="menucolor" state={{align:"center"}}> Insert Product </Link>
             
               </div>
               <div id="adminContent">
