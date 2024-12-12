@@ -8,20 +8,9 @@ import axios from 'axios';
 const CheckOut = () => {
   const myCard = useSelector((state) => state.mycard.cart);
 
-  const [mypro, setMypro] = useState({
-    name: "",
-    creator: "",
-    img: "",
-    price: ""
-  });
+  const [mypro, setMypro] = useState({});
 
-  const [formData, setFormData] = useState({
-    name: "",
-    address: "",
-    city: "",
-    pinCode: "",
-    mobile: ""
-  });
+  const [formData, setFormData] = useState({});
 
   let totalAmount = 0;
 
@@ -56,7 +45,6 @@ const CheckOut = () => {
   };
 
   const handlePay = async () => {
-    // Prepare product details
     const proname = myCard.map(item => item.name).join(", ");
     const proimg = myCard.length > 0 ? myCard[0].image : "";
     const totalPrice = myCard.reduce((acc, item) => acc + item.price * item.qnty, 0);
@@ -69,7 +57,6 @@ const CheckOut = () => {
       price: totalPrice
     });
 
-    // Make payment order request
     try {
       const orderURL = "http://localhost:8000/api/payment/orders";
       const { data } = await axios.post(orderURL, { amount: totalPrice });

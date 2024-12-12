@@ -318,9 +318,6 @@ margin-bottom: 10px;
      height: "200px" ;
 }
 
-
-
-
 #prodata{
    
     gap:20px;
@@ -365,9 +362,6 @@ margin-bottom: 10px;
     display: flex;
     justify-content: space-around;
     column-gap: 20px;
-}
-#vedioplayer .ReactPlayer{
-    
 }
 
 #CardSection {
