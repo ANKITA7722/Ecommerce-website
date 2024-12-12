@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 
-//Creating Order
+
 
 
 
@@ -33,7 +33,7 @@ router.post("/orders",async(req,res) => {
 
 });
 
-//Verifying the payment
+
 router.post("/verify",async(req,res) => {
     try {
         const {

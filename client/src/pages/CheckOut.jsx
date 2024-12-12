@@ -10,13 +10,7 @@ const CheckOut = () => {
 
   const [mypro, setMypro] = useState({});
 
-  const [formData, setFormData] = useState({});
-
-  let totalAmount = 0;
-
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [input, setInput] = useState({});
 
   const initPay = (data) => {
     const options = {
@@ -45,34 +39,58 @@ const CheckOut = () => {
   };
 
   const handlePay = async () => {
-    const proname = myCard.map(item => item.name).join(", ");
-    const proimg = myCard.length > 0 ? myCard[0].image : "";
-    const totalPrice = myCard.reduce((acc, item) => acc + item.price * item.qnty, 0);
+    // const proname = myCard.map(item => item.name).join(", ");
+    // const proimg = myCard.length > 0 ? myCard[0].image : "";
+    // const totalAmount = myCard.reduce((acc, item) => acc + item.price * item.qnty, 0);
 
     // Update state
-    setMypro({
+     setMypro({
       name: proname,
       creator: "Zara",
       img: proimg,
-      price: totalPrice
+      price: totalAmount
     });
 
     try {
       const orderURL = "http://localhost:8000/api/payment/orders";
-      const { data } = await axios.post(orderURL, { amount: totalPrice });
+      const {data} = await axios.post(orderURL,{amount: mypro.price});
       console.log(data);
       initPay(data.data);
     } catch (error) {
       console.log(error);
     }
+
+  //   const api = "http://localhost:8000/users/usersave";
+  //   axios.post(api, { ...input, proname: mypro.name, price: mypro.price }).then((res) => {
+  //     console.log("Data save!!!");
+  //   })
+
+   };
+
+
+  const handleInputChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    setInput(values => ({ ...values, [name]: value }))
+    console.log(input);
   };
 
-  const ans = myCard.map((key, index) => {
+
+  let sno=0;
+  let totalAmount = 0;
+  let proname = "";
+  let brand = "Zara";
+  let proimg = ""
+
+  const ans = myCard.map((key) => {
     totalAmount += key.price * key.qnty;
+    proname += key.name + ", ";
+    proimg += key.image;
+    sno++;
     return (
-      <tr key={index}>
-        <td>{index + 1}</td>
-        <td><img src={key.image} width="100" height="100" alt={key.name} /></td>
+      <tr>
+        <td>{sno}</td>
+        <td><img src={key.image} width="100" height="100" /></td>
         <td>{key.name}</td>
         <td>{key.description}</td>
         <td>{key.category}</td>
@@ -94,7 +112,7 @@ const CheckOut = () => {
               <Form.Control
                 type="text"
                 name="name"
-                value={formData.name}
+                value={input.name}
                 onChange={handleInputChange}
               />
             </Form.Group>
@@ -103,7 +121,7 @@ const CheckOut = () => {
               <Form.Control
                 type="text"
                 name="address"
-                value={formData.address}
+                value={input.address}
                 onChange={handleInputChange}
               />
             </Form.Group>
@@ -112,7 +130,7 @@ const CheckOut = () => {
               <Form.Control
                 type="text"
                 name="city"
-                value={formData.city}
+                value={input.city}
                 onChange={handleInputChange}
               />
             </Form.Group>
@@ -121,7 +139,7 @@ const CheckOut = () => {
               <Form.Control
                 type="text"
                 name="pinCode"
-                value={formData.pinCode}
+                value={input.pinCode}
                 onChange={handleInputChange}
               />
             </Form.Group>
@@ -130,7 +148,7 @@ const CheckOut = () => {
               <Form.Control
                 type="text"
                 name="mobile"
-                value={formData.mobile}
+                value={input.mobile}
                 onChange={handleInputChange}
               />
             </Form.Group>
@@ -156,9 +174,30 @@ const CheckOut = () => {
             <tbody>
               {ans}
               <tr>
-                <td colSpan="6"></td>
-                <td>Net Amount</td>
-                <td>{totalAmount}</td>
+                <th> </th>
+                <th> </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>  </th>
+                <th>Net Amount</th>
+                <th>{totalAmount}</th>
+              </tr>
+              <tr>
+                <th> </th>
+                <th> </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>  </th>
+                <th>
+
+
+
+                </th>
+                <th> </th>
+
+
               </tr>
             </tbody>
           </Table>
