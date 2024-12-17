@@ -56,5 +56,4 @@ module.exports={
     showProductByCategory,
     searchProduct,
     shopProduct
-
 }
