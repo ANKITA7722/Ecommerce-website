@@ -22,8 +22,6 @@ const Search = () => {
         })
     }
 
-
-
     const addcardData = (id, name, desc, categ, price, image) => {
         dispatch(addToCart({ id: id, name: name, description: desc, category: categ, price: price, image: image, qnty: 1 }))
     }
