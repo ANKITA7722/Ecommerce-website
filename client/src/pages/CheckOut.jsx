@@ -13,8 +13,9 @@ const CheckOut = () => {
   const [input, setInput] = useState({});
 
   const initPay = (data) => {
+    
     const options = {
-      key: "rzp_test_yB3kr8D5jEexjb",
+      key: "rzp_test_JaWwjMvJvY8ZFO",
       amount: data.amount,
       currency: data.currency,
       name: mypro.name,
@@ -39,31 +40,45 @@ const CheckOut = () => {
   };
 
   const handlePay = async () => {
-    // const proname = myCard.map(item => item.name).join(", ");
-    // const proimg = myCard.length > 0 ? myCard[0].image : "";
-    // const totalAmount = myCard.reduce((acc, item) => acc + item.price * item.qnty, 0);
-
-    // Update state
-     setMypro({
+   
+    await setMypro({
       name: proname,
-      creator: "Zara",
+      creator: brand,
       img: proimg,
       price: totalAmount
     });
 
     try {
       const orderURL = "http://localhost:8000/api/payment/orders";
-      const {data} = await axios.post(orderURL,{amount: mypro.price});
-      console.log(data);
-      initPay(data.data);
-    } catch (error) {
-      console.log(error);
-    }
+  
+      const { data } = await axios.post(orderURL, { amount: mypro.price });
+  
+      console.log('Order Response:', data);
+  
+      if (data && data.id && data.amount) {
+          initPay(data); // Proceed with payment initialization
+      } else {
+          console.error('Invalid response data from API');
+          alert('Failed to create payment order');
+      }
+  } catch (error) {
+      if (error.response) {
+          console.error('API Error:', error.response.data);
+          alert(`Error from Server: ${error.response.data.message || 'Something went wrong on the server.'}`);
+      } else if (error.request) {
+          console.error('No response received:', error.request);
+          alert('Error: No response received from the server. Please check your network connection.');
+      } else {
+          console.error('Request Setup Error:', error.message);
+          alert('Error: ' + error.message);
+      }
+  }
+  
 
-  //   const api = "http://localhost:8000/users/usersave";
-  //   axios.post(api, { ...input, proname: mypro.name, price: mypro.price }).then((res) => {
-  //     console.log("Data save!!!");
-  //   })
+    const api = "http://localhost:8000/users/usersave";
+    axios.post(api, { ...input, proname: mypro.name, price: mypro.price }).then((res) => {
+      console.log("Data save!!!");
+    })
 
    };
 
