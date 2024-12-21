@@ -27,7 +27,7 @@ app.use("/product", productRoute);
 app.use("/users", userRoute);
 
 
-app.use("/api/payment",paymentRoute);
+app.use("/api/payment/",paymentRoute);
 
 
 // Database Connection

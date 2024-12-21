@@ -6,42 +6,32 @@ const crypto = require("crypto");
 
 
 
-router.post("/orders", async (req, res) => {
+router.post("/orders",async(req,res) => {
     try {
-        // Ensure the keys are correctly loaded from the environment variables
         const instance = new Razorpay({
             key_id: process.env.KEY_ID,
             key_secret: process.env.KEY_SECRET,
         });
 
-        // const { amount } = req.body;
-        // if (!amount || amount <= 0) {
-        //     return res.status(400).json({ message: "Invalid amount" });
-        // }
-
         const options = {
-            amount: req.body.amount * 100,  // Convert to paise
-            currency: "INR",
-            receipt: crypto.randomBytes(10).toString("hex"),
-        };
-
-        instance.orders.create(options, (error, order) => {
-            if (error) {
-                console.log( error);
-                return res.status(500).json({ message: "Something Went Wrong!" });
+            amount: req.body.amount * 100,
+            currency:"INR",
+            receipt:crypto.randomBytes(10).toString("hex"),
+        }
+        instance.orders.create(options,(error,order) => {
+            if(error) {
+                console.log(error);
+                return res.status(500).json({message:"Something Went Wrong!"});
             }
-            console.log("Razorpay order:", order);
-            res.status(200).json({ data: order });
+            res.status(200).json({data:order});
         });
 
-    } catch (error) {
-        console.log("Server error:", error);
-        res.status(500).json({ message: "Internal Server Error!" });
+    } catch(error) {
+        console.log(error);
+        res.status(500).json({message:"Internal Server Error!"});
     }
+
 });
-
-
-
 
 //Verifying the payment
 router.post("/verify",async(req,res) => {

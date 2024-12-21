@@ -29,11 +29,39 @@ const navigate= useNavigate();
     }
 
 
+  //   const handleSubmit = () => {
+  //     if (!input || typeof input !== 'object') {
+  //         alert('Invalid input data');
+  //         return;
+  //     }
+  
+  //     const api = "http://localhost:8000/product/shopproduct";
+  
+  //     axios.post(api, input)
+  //         .then((res) => {
+  //             setMydata(res.data);
+  //             console.log('Response Data:', res.data);
+  //         })
+  //         .catch((error) => {
+  //             if (error.response) {
+  //                 console.error('API Error:', error.response.data);
+  //                 alert(`Error: ${error.response.data.message || 'API Error'}`);
+  //             } else if (error.request) {
+  //                 console.error('No response received:', error.request);
+  //                 alert('Error: No response received from the server.');
+  //             } else {
+  //                 console.error('Error:', error.message);
+  //                 alert('Error: ' + error.message);
+  //             }
+  //         });
+  // };
+  
+
     const addcardData=(id, name, desc, categ, price, image)=>{
         dispatch(addToCart({id:id, name:name, description:desc, category:categ, price:price, image:image, qnty:1}))
  }
 
- const ans=mydata.map((key)=>{
+ const ans = mydata.map((key)=>{
    return(
      <>
        <Card style={{ width: '18rem', marginTop:'20px' }}>
@@ -59,9 +87,6 @@ const navigate= useNavigate();
      </>
    )
  })
-
-
-
 
     return(
         <>

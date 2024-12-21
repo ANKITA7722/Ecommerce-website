@@ -19,8 +19,9 @@ import Rings from "./pages/Rings";
 import Bangles from "./pages/Bangles";
 import Waistbands from "./pages/Waistbands";
 import Search from "./pages/Search";
-import CheckOut from "./pages/CheckOut";
+
 import ShopProduct from "./pages/ShopProduct";
+import CheckOut from "./pages/CheckOut";
 
 
 
