@@ -37,38 +37,47 @@ const ProductDetail = () => {
                 {mydata.image ? (<img src={mydata.image} alt={mydata.name}  />) :
                  (<p>Loading image...</p>)}
 
-                 <div>
-                    <img src=""/>
-                    <img src=""/>
-                 </div>
-
             </div>
 
             <div id="prodata">
-                <h2>{mydata.name}</h2>
-                <h4> Rs. {mydata.price}</h4>
-                <h5>Ships in 7-10 business days</h5>
-                <h6> {mydata.category}</h6>
+  <h2 className="productName">{mydata.name}</h2>
+  <h4 className="productPrice">Rs. {mydata.price}</h4>
+  <h5 className="shippingInfo">Ships in 7-10 business days</h5>
+  <h6 className="productCategory">{mydata.category}</h6>
 
+  <Button 
+    style={{ marginTop: "20px" }} 
+    className="addToCartButton"
+    onClick={() => { 
+      addcardData(
+        mydata._id, 
+        mydata.name, 
+        mydata.description, 
+        mydata.category, 
+        mydata.price, 
+        mydata.image
+      ); 
+    }}
+    disabled={!mydata._id}
+  >
+    Add to Cart
+  </Button>
 
-                <Button style={{ marginTop: "20px" }} onClick={() => {addcardData(mydata._id, mydata.name, mydata.description, mydata.category, mydata.price, mydata.image);}}
-                    disabled={!mydata._id} >
-                    Add to Cart
-                </Button>
+  <h5 className="productDetailTitle">Product Detail:</h5>
+  <p className="productDescription">{mydata.description}</p>
 
-                <h5>Product Detail: {mydata.description}</h5>
-                <div>
-                    <h3>Jwellery Care</h3>
-                    <p>Here are some of the best ways to care for your artificial jewellery:</p>
-                    <ul>
-                        <li>Keep it dry away and from moisture</li>
-                        <li>Take it off after use</li>
-                        <li>Store it carefully in a jewellery box</li>
-                        <li>Clean it after use</li>
-                    </ul>
-                </div>
-                
-            </div>
+  <div className="jewelryCare">
+    <h3>Jewelry Care</h3>
+    <p>Here are some of the best ways to care for your artificial jewelry:</p>
+    <ul>
+      <li>Keep it dry and away from moisture</li>
+      <li>Take it off after use</li>
+      <li>Store it carefully in a jewelry box</li>
+      <li>Clean it after use</li>
+    </ul>
+  </div>
+</div>
+
         </div>
     );
 };

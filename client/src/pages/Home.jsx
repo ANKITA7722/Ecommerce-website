@@ -229,7 +229,7 @@ const Home = () => {
             {/* ---------------------------------------------------- */}
             <div id='home4'>
                 <div className='d1'><Button variant="primary" style={{ backgroundColor: "black", border: "none" }}>View All</Button>
-                    <h2> Populler Collection</h2></div>
+                    <h2>-  Populler Collection   -</h2></div>
 
                 <Card style={{ width: '23rem' }}>
                     <Card.Img variant="top" src={g2} />

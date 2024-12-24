@@ -2,6 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import axios from "axios";
+import {message} from "antd"
+
 
 const InsertProduct = () => {
   const [input, setInput] = useState({});
@@ -34,17 +36,18 @@ const InsertProduct = () => {
       // Save product data to your API
       const api1 = "http://localhost:8000/product/productsave";
       await axios.post(api1, { ...input, image: imageUrl });
-      alert("Data saved successfully!");
+      message.success("Data saved successfully!");
     } catch (error) {
       console.error("Error uploading image or saving data:", error);
-      alert("Failed to save data. Please try again.");
+      message.error("Failed to save data. Please try again.");
     }
   };
 
   return (
     <>
+
     <div id='insertpage'>
-      <h1>Insert New Product</h1>
+      <h1 style={{marginLeft:"100px"}}>Insert New Product</h1>
       <Form style={{ width: '600px' }} onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formProductName">
           <Form.Label>Enter Product Name</Form.Label>
