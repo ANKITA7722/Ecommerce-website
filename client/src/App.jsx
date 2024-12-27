@@ -22,6 +22,8 @@ import Search from "./pages/Search";
 
 import ShopProduct from "./pages/ShopProduct";
 import CheckOut from "./pages/CheckOut";
+import CardSlider from "./pages/cardSlider";
+
 
 
 
@@ -53,6 +55,7 @@ const App = () => {
             <Route path="search" element={<Search />} />
             <Route path="checkout" element={<CheckOut/>} />
             <Route path="shop" element={<ShopProduct/>} />
+            <Route path="cardslider" element={<CardSlider/>} />
           </Route>
           <Route>
             <Route path="/admin" element={<AdminDashboard />} />

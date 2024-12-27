@@ -23,13 +23,9 @@ import Card from 'react-bootstrap/Card';
 
 import g4 from "../images/slide2.webp"
 
-
-
-
-
 import ring1 from "../images/jwell.webp";
 import neck from "../images/nec.webp";
-import neck1 from "../images/neck1.avif"
+// import neck1 from "../images/neck1.avif"
 import neck2 from "../images/neck2.avif"
 import bangle from "../images/bangle.avif"
 import bangle2 from "../images/bangle2.webp"
@@ -53,7 +49,7 @@ const Home = () => {
     const navigate= useNavigate();
 
     const loadData = () => {
-        let api = "http://localhost:8000/product/?type=new";
+        let api = "http://localhost:8000/product/showproduct";
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log(res.data);
@@ -152,7 +148,7 @@ const Home = () => {
                     <div className="hover-animation">
                         <Card style={{ width: '18rem', border: "none" }}>
                             <img src={neck2} style={{ width: '18rem', height: "290px" }} className="img-back" />
-                            <img src={neck1} style={{ width: '18rem', height: "290px" }} />
+                            <img src={neck2} style={{ width: '18rem', height: "290px" }} />
                             <Card.Body style={{}}>
                                 <Card.Text> custer gold ring</Card.Text>
                                 <p>rs</p>
