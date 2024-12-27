@@ -12,7 +12,7 @@ const Neckless = () => {
     const navigate = useNavigate();
 
     const loadData = () => {
-        let api = "http://localhost:8000/product/showproductbycategory?category=Maangtika";
+        let api = "http://localhost:8000/product/showproductbycategory?category=Necklass";
         axios.get(api).then((res) => {
             setMydata(res.data);
             console.log(res.data);
@@ -30,7 +30,7 @@ const Neckless = () => {
     const ans = mydata.map((key) => {
         return (
             <>
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '19rem' }}>
                     <a href="#" onClick={() => { navigate(`/prodetail/${key._id}`) }}>
                         <Card.Img variant="top" src={key.image} />
                     </a>

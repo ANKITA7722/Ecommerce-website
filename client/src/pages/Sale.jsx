@@ -41,13 +41,13 @@ const Sale = () => {
     const ans = mydata.map((key) => {
         return (
             <>
-               <Card style={{ width: '18rem'}}>
+               <Card style={{ width: '19rem'}}>
                 <a href="#" onClick={()=>{navigate(`/prodetail/${key._id}`)}}>
                      <Card.Img variant="top" src={key.image} />
                 </a>
                    
 
-                    <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
+                    <Card.Body style={{ backgroundColor: ' rgb(248, 227, 233)' }}>
                         <Card.Title style={{ textAlign: 'center' }}> {key.name}</Card.Title>
                         <Card.Text> ₹  {key.price}</Card.Text>
                         <Button  style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
@@ -62,7 +62,7 @@ const Sale = () => {
 
     return (
         <>
-            <h1>Selling page</h1>
+          
 <div id='selans'>
     {ans}
 </div>

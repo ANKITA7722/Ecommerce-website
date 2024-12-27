@@ -34,19 +34,6 @@
             <img src={Neck2}/>
             </a>
         </div>
-        <div id="collection2">
-            <div>
-            <img src={b1}/>
-            <h2>Bangles</h2>
-            <button>Explore Stone Bangles</button>
-            </div>
-
-            <div>
-            <img src={b2}/>
-            <h2>Bangles</h2>
-            <button>Explore Gold Bangles</button>
-            </div>
-        </div>
         <div id="collection1">
         <a href="#"onClick={()=>{navigate("/earring")}}>
             <img src={Neck3}/>

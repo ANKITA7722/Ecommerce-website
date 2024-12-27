@@ -61,8 +61,8 @@ const InsertProduct = () => {
 
         <Form.Group className="mb-3" controlId="formProductCategory">
           <Form.Label>Select Category</Form.Label>
-          <Form.Select name="category" value={input.category}  onChange={handleInput}>
-            <option value=">Necklass">Necklass</option>
+          <Form.Select name="category" value={input. category}  onChange={handleInput}>
+            <option value="Necklass">Necklass</option>
             <option value="Earring">Earring</option>
             <option value="Rings">Rings</option>
             <option value="Bangles">Bangles</option>
@@ -73,7 +73,7 @@ const InsertProduct = () => {
             <option value="Mangalsutra">Mangalsutra</option>
             <option value="Maangtika">Maangtika</option>
             <option value="BridalSets">Bridal Sets</option>
-            <option value="Long Necklaces">Long Necklaces</option>
+            <option value="LongNecklaces">Long Necklaces</option>
           </Form.Select>
         </Form.Group>
 
@@ -90,7 +90,7 @@ const InsertProduct = () => {
 
         <Form.Group className="mb-3" controlId="formProductCategory">
           <Form.Label>Select type of product </Form.Label>
-          <Form.Select name="type" value={input.type}  onChange={handleInput}>
+          <Form.Select name="collection" value={input.collection}  onChange={handleInput}>
             <option value="new">new</option>
             <option value="old">old</option>
             </Form.Select>

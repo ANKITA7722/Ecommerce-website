@@ -16,12 +16,10 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link as={Link} to="home">Home</Nav.Link>
-
-                <Nav.Link href="#link">Link</Nav.Link>
                 <NavDropdown title="JWELLERY" id="basic-nav-dropdown">
-                  <NavDropdown.Item as={Link} to="neckless">Necklace</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="longneckless">Long Necklace Sets </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="">Pandant Sets</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="Necklass">Necklace</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="LongNecklaces">Long Necklace Sets </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="Pendant">Pandant Sets</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="choker">Chocker Sets</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="">Acccessorice</NavDropdown.Item>
 
@@ -29,9 +27,9 @@ const Header = () => {
 
                 <NavDropdown title="COLLECTION" id="basic-nav-dropdown">
                 <NavDropdown.Item  as={Link} to="collecton" >Collection</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="" >Necklace</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="longneckless">Long Necklace Sets </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="">Pandant Sets</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="Necklass" >Neckless</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="LongNecklaces">Long Necklace Sets </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="Pendant">Pandant Sets</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="choker">Chocker Sets</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="Mangalsutra">Mangalsutra</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="mangtika">Maangtika</NavDropdown.Item>
@@ -43,7 +41,7 @@ const Header = () => {
 
                 </NavDropdown>
                 <Nav.Link as={Link} to="radytoship">READY TO SHIP</Nav.Link>
-                <Nav.Link as={Link} to="giftshop">GIFT SHOP</Nav.Link>
+
                 <Nav.Link as={Link} to="sale">SALE</Nav.Link>
                 <Nav.Link as={Link} to="cart">MyCart</Nav.Link>
                 <Nav.Link as={Link} to="search">Search</Nav.Link>

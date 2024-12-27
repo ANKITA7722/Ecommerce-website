@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import Sale from "./pages/Sale"
-import GiftShop from "./pages/GiftShop";
 import AdminDashboard from "./admin/AdminDashboard";
 import InsertProduct from "./admin/InsertProduct";
 import Cart from "./pages/Cart";
@@ -19,10 +18,10 @@ import Rings from "./pages/Rings";
 import Bangles from "./pages/Bangles";
 import Waistbands from "./pages/Waistbands";
 import Search from "./pages/Search";
-
 import ShopProduct from "./pages/ShopProduct";
 import CheckOut from "./pages/CheckOut";
 import CardSlider from "./pages/cardSlider";
+import Pendent from "./pages/Pendant";
 
 
 
@@ -40,12 +39,12 @@ const App = () => {
             <Route path="cart" element={<Cart />} />
             <Route path="radytoship" element={<RadytoShip />} />
             <Route path="sale" element={<Sale />} />
-            <Route path="giftshop" element={<GiftShop />} />
+            <Route path="Pendant" element={<Pendent />} />
             <Route path="collecton" element={<Collection />} />
             <Route path="prodetail/:proid" element={<ProductDetail />} />
-            <Route path="neckless" element={<Neckless />} />
+            <Route path="Necklass" element={<Neckless />} />
             <Route path="mangtika" element={<Mangtika />} />
-            <Route path="longneckless" element={<LongNeckless />} />
+            <Route path="LongNecklaces" element={<LongNeckless />} />
             <Route path="choker" element={<ChokerSet />} />
             <Route path="Mangalsutra" element={<Mangalsutra />} />
             <Route path="earring" element={<Earring />} />

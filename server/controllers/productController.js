@@ -1,14 +1,15 @@
 const ProductModel=require("../models/productModel");
 
 const productSave=async(req,res)=>{
-    const {name,description,category,price,image}=req.body;
+    const {name,description, category,price,image,collection}=req.body;
 
     const Product=await ProductModel.create({
         name:name,
         description:description,
-        category:category,
+        category: category,
         price:price,
-        image:image
+        image:image,
+        collection:collection
     })
     res.send(Product);
 }

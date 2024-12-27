@@ -224,7 +224,9 @@ const Home = () => {
             </div>
             {/* ---------------------------------------------------- */}
             <div id='home4'>
-                <div className='d1'><Button variant="primary" style={{ backgroundColor: "black", border: "none" }}>View All</Button>
+                <div className='d1'>
+                    <Button variant="primary" style={{ backgroundColor: "black", border: "none" }} 
+                     onClick={()=>{navigate("/sale")}}>View All</Button>
                     <h2>-  Populler Collection   -</h2></div>
 
                 <Card style={{ width: '23rem' }}>
