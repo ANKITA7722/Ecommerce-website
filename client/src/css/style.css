@@ -32,10 +32,11 @@ body{
     margin: 10px;
 
 }
+
 #Footer {
 
     background: linear-gradient(to right, #f7d794, #f8a5c2);
-    color: rgb(12, 11, 11);
+    color: rgb(36, 28, 28);
     padding: 10px;
     text-align: left;
     display: flex;
@@ -49,6 +50,22 @@ body{
 #Footer div {
     padding: 40px;
 }
+
+#Home .child1{
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 #Home2 img{
   width: 100%;
@@ -67,6 +84,7 @@ hr {
 #Home3 {
     background-color: rgb(230, 241, 247);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     text-align: center;
@@ -337,34 +355,7 @@ margin-bottom: 10px;
     transition: transform 0.3s ease-in-out;
   }
 
-/* #proImage{
-    width: "200px";
-     height: "200px" ;
-} */
 
-/* #prodata{
-   
-    gap:20px;
-    margin: 20px;
-    
-    }
-    
-    #prodata button{
-        width: 50%;
-        background-color: white;
-        color:black;
-        margin-bottom: 20px;
-        padding: 10px;
-        border: black solid;
-       
-        
-    }
-
-    #prodata button:hover{
-        background-color: black;
-        color: white; 
-        border:none;
-    } */
 
     #prodata {
         font-family: 'Arial', sans-serif;
@@ -497,6 +488,8 @@ margin-bottom: 10px;
     display: flex;
     justify-content: space-around;
     column-gap: 20px;
+    margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #CardSection {
@@ -619,3 +612,6 @@ body {
     }
   }
 /* =================================== */
+
+
+/* ===========================*/

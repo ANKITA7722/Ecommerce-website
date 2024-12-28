@@ -35,7 +35,7 @@ const Rings = () => {
                         <Card.Img variant="top" src={key.image} />
                     </a>
                     <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
-                        <Card.Title style={{ textAlign: 'center' }}> {key.name}</Card.Title>
+                        <Card.Title > {key.name}</Card.Title>
                         <Card.Text> RS. {key.price}</Card.Text>
                         <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
                             onClick={() => { addcardData(key._id, key.name, key.description, key.category, key.price, key.image) }}>

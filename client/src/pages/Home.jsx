@@ -1,7 +1,13 @@
 import Carousel from 'react-bootstrap/Carousel';
 import first from "../images/fourth.webp";
-import second from "../images/s8.webp";
+import second from "../images/jewelrybanner.jpg";
 import third from "../images/third.webp";
+
+import ReactPlayer from 'react-player'
+import vedio from "../images/bde.mp4"
+import vedio1 from "../images/Bidv.mp4"
+import vedio2 from "../images/BIPM.mp4"
+import vedio3 from "../images/Bridal.mp4"
 
 
 import nec from "../images/Earrings2.avif";
@@ -34,7 +40,7 @@ import earing1 from "../images/earing1.avif"
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { addToCart } from '../cardSlice'; 
+import { addToCart } from '../cardSlice';
 
 //=================================
 import floral from "../images/Goldjwell.jpg";
@@ -43,10 +49,56 @@ import floral3 from "../images/Neckles1.jpg";
 import icon from "../images/icon.webp"
 import { useNavigate } from 'react-router-dom';
 
+// ==================================================
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 const Home = () => {
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true, 
+        autoplaySpeed: 2000, 
+        arrows: true, 
+       Home: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+
+    };
+
+
     const [mydata, setMydata] = useState([]);
     const dispatch = useDispatch();
-    const navigate= useNavigate();
+    const navigate = useNavigate();
 
     const loadData = () => {
         let api = "http://localhost:8000/product/showproduct";
@@ -61,77 +113,78 @@ const Home = () => {
     }, [])
 
     const addcardData = (id, name, description, category, price, image) => {
-        dispatch(addToCart({ id: id, name: name, description: description, category: category, price: price, image: image, qnty:1 }))
+        dispatch(addToCart({ id: id, name: name, description: description, category: category, price: price, image: image, qnty: 1 }))
     }
 
     const ans = mydata.map((key) => {
         return (
             <>
-               <Card style={{ width: '18rem'}}>
-                <a href="#" onClick={()=>{navigate(`/prodetail/${key._id}`)}}>
-                     <Card.Img variant="top" src={key.image} />
-                </a>
-                   
+           
+                <Card style={{ width: '18rem' }}>
+                    <a href="#" onClick={() => { navigate(`/prodetail/${key._id}`) }}>
+                        <Card.Img variant="top" src={key.image} />
+                    </a>
+
 
                     <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
                         <Card.Title style={{ textAlign: 'center' }}> {key.name}</Card.Title>
                         <Card.Text> RS. {key.price}</Card.Text>
-                        <Button  style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
-                        onClick={()=>{addcardData(key._id,key.name,key.description,key.category,key.price,key.image)}}>
+                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
+                            onClick={() => { addcardData(key._id, key.name, key.description, key.category, key.price, key.image) }}>
                             Add to Card</Button>
                     </Card.Body>
                 </Card>
+               
             </>
         )
     })
     return (
         <>
-        {/* carousel section............................................................ */}
+            {/* carousel section............................................................ */}
             <div id="Home">
-                <Carousel>
-                    <Carousel.Item>
-                        <img src={first} height="500px" width="100%" />
-                        <Carousel.Caption>
-                            <h3>Bridal Jewelry</h3>
-                            <p>A gorgeous jewelry can add a polished, elegant finishing touch
-                                to any ensemble and if it is a bridal set! Bridal imitation jewelry has a bright tone that sparkles under the light.</p>
-                        </Carousel.Caption>
+                
+                <Carousel style={{marginTop:"20px", backgroundColor:"rgb(36, 28, 28)"}}>
+                   
+                    <Carousel.Item height="500px" width="100%" style={{display:"flex",color:"white"}}>
+                    <ReactPlayer controls={true} url={vedio3} loop={true} playing={true} muted={true}/>
+                    <div className='textarea'>
+                         <h1>best brands for trininka</h1>
+                         <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est laboriosam voluptate, facilis ipsum provident ipsa natus ipsam ex nostrum sequi </h6>
+                         <Button>Shop Now</Button>
+                    </div>
                     </Carousel.Item>
+                   
+
                     <Carousel.Item>
                         <img src={second} height="500px" width="100%" />
-                        <Carousel.Caption>
-                            <h3>American Diamond</h3>
-                            <p>A gorgeous jewelry can add a polished, elegant finishing touch to any ensemble.
-                                This trendy diamond finished imitation jewelry will be a great addition to your collection and will make you stand out in style.</p>
-                        </Carousel.Caption>
+                           
                     </Carousel.Item>
                     <Carousel.Item>
                         <img src={third} height="500px" width="100%" />
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
-                        </Carousel.Caption>
+                       
                     </Carousel.Item>
                 </Carousel>
-{/* icon ................................................................................... */}
+                {/* icon ................................................................................... */}
             </div>
             <div id='Home2'>
                 <img src={icon} />
             </div>
- {/* New ariival................................................................................... */}
+            {/* New ariival................................................................................... */}
             <div id='CardSection'>
                 <div id="NewArival"><h3>NEW ARIVAL</h3>
                     <p>Explore New Style of the Season</p>
                 </div>
 
-{/* output......................................................................................... */}
-                <div id='CardCloudImg'>
-                    {ans}
-                </div>
-  {/*  .............................................................................................. */}
+                {/* output......................................................................................... */}
+                
+              
+                <Slider {...settings}>
+                {ans}
+            </Slider>
+               
+                {/*  .............................................................................................. */}
                 <div id='sellingPage'>
+               
                     <div className="hover-animation">
                         <Card style={{ width: '18rem', border: "none" }}>
                             <img src={neck} style={{ width: '18rem', height: "290px" }} className="img-back" />
@@ -183,6 +236,17 @@ const Home = () => {
                 </div>
 
             </div>
+           
+            {/* vedios =================== */}
+
+            <div id='vedioplayer' >
+                <ReactPlayer controls={true} url={vedio} loop={true} playing={true} muted={true} />
+                <ReactPlayer controls={true} url={vedio1} loop={true} playing={true} muted={true} />
+                <ReactPlayer controls={true} url={vedio2} loop={true} playing={true} muted={true} />
+            </div>
+
+
+
             <div id='Home3'>
                 <div>
                     <img src={nec} />
@@ -215,7 +279,7 @@ const Home = () => {
                     <img src={c5} />
                     <p>Maangtika</p>
                 </div>
-               
+
 
             </div>
             <div id='card'>
@@ -225,8 +289,8 @@ const Home = () => {
             {/* ---------------------------------------------------- */}
             <div id='home4'>
                 <div className='d1'>
-                    <Button variant="primary" style={{ backgroundColor: "black", border: "none" }} 
-                     onClick={()=>{navigate("/sale")}}>View All</Button>
+                    <Button variant="primary" style={{ backgroundColor: "black", border: "none" }}
+                        onClick={() => { navigate("/sale") }}>View All</Button>
                     <h2>-  Populler Collection   -</h2></div>
 
                 <Card style={{ width: '23rem' }}>
