@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
-import first from "../images/fourth.webp";
-import second from "../images/jewelrybanner.jpg";
+import first from "../images/Artboard1.webp";
+import second from "../images/Artboard.webp";
 import third from "../images/third.webp";
 
 import ReactPlayer from 'react-player'
@@ -10,13 +10,13 @@ import vedio2 from "../images/BIPM.mp4"
 import vedio3 from "../images/Bridal.mp4"
 
 
-import nec from "../images/Earrings2.avif";
-import choker from "../images/Choker.avif";
-import c1 from "../images/Ring2.avif";
-import c2 from "../images/Bridal.avif";
-import c3 from "../images/Bangles5.webp";
-import c4 from "../images/Mangalsutra.avif";
-import c5 from "../images/Maangtika.avif";
+import nec from "../images/earing.webp";
+import choker from "../images/Set.webp";
+import c1 from "../images/ArtboardRing.webp";
+import c2 from "../images/Pandent.webp";
+import c3 from "../images/shopping.webp";
+import c4 from "../images/Mangalsutra.webp";
+import c5 from "../images/mangtika.jpg";
 
 // import collegcol from "../images/collegecollection.webp";
 
@@ -43,9 +43,10 @@ import axios from 'axios';
 import { addToCart } from '../cardSlice';
 
 //=================================
-import floral from "../images/Goldjwell.jpg";
-import floral2 from "../images/Yearing1.webp";
-import floral3 from "../images/Neckles1.jpg";
+import floral from "../images/collection_copy_2_f41829bf-2aff-48e8-ba83-d2dadeea7fdf.webp";
+import floral2 from "../images/collection_copy_3.webp";
+import floral3 from "../images/collection_copy_3ede784a-6742-468a-81fa-ba2c0ab9154f.webp";
+import floral4 from "../images/collection_copy_4.webp";
 import icon from "../images/icon.webp"
 import { useNavigate } from 'react-router-dom';
 
@@ -63,38 +64,55 @@ const Home = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: true, 
-        autoplaySpeed: 2000, 
-        arrows: true, 
-       Home: [
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        customPaging: (i) => (
+            <div
+                style={{
+                    width: "12px",
+                    height: "12px",
+                    borderRadius: "50%",
+                    backgroundColor: "#000",
+                }}
+            />
+        ),
+        appendDots: (dots) => (
+            <div>
+                <ul
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        overflow: "hidden",
+                        maxWidth: "300px",
+                        margin: "0 auto",
+                    }}
+                >
+                    {dots.slice(0, 6)} {/* Show only the first 6 bullets */}
+                </ul>
+            </div>
+        ),
+        responsive: [
             {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-              }
+                breakpoint: 1200, // For large screens
+                settings: {
+                    slidesToShow: 3,
+                },
             },
             {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                initialSlide: 2
-              }
+                breakpoint: 992, // For medium screens
+                settings: {
+                    slidesToShow: 2,
+                },
             },
             {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
-
+                breakpoint: 768, // For small screens
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
     };
-
 
     const [mydata, setMydata] = useState([]);
     const dispatch = useDispatch();
@@ -119,7 +137,7 @@ const Home = () => {
     const ans = mydata.map((key) => {
         return (
             <>
-           
+
                 <Card style={{ width: '18rem' }}>
                     <a href="#" onClick={() => { navigate(`/prodetail/${key._id}`) }}>
                         <Card.Img variant="top" src={key.image} />
@@ -134,7 +152,7 @@ const Home = () => {
                             Add to Card</Button>
                     </Card.Body>
                 </Card>
-               
+
             </>
         )
     })
@@ -142,26 +160,31 @@ const Home = () => {
         <>
             {/* carousel section............................................................ */}
             <div id="Home">
-                
-                <Carousel style={{marginTop:"20px", backgroundColor:"rgb(36, 28, 28)"}}>
-                   
-                    <Carousel.Item height="500px" width="100%" style={{display:"flex",color:"white"}}>
+
+                <Carousel >
+
+                    {/* <Carousel.Item height="500px" width="100%" style={{display:"flex",color:"white"}}>
                     <ReactPlayer controls={true} url={vedio3} loop={true} playing={true} muted={true}/>
                     <div className='textarea'>
                          <h1>best brands for trininka</h1>
                          <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est laboriosam voluptate, facilis ipsum provident ipsa natus ipsam ex nostrum sequi </h6>
                          <Button>Shop Now</Button>
                     </div>
-                    </Carousel.Item>
-                   
+                    </Carousel.Item> */}
 
                     <Carousel.Item>
                         <img src={second} height="500px" width="100%" />
-                           
+
+                    </Carousel.Item>
+
+
+                    <Carousel.Item>
+                        <img src={first} height="500px" width="100%" />
+
                     </Carousel.Item>
                     <Carousel.Item>
                         <img src={third} height="500px" width="100%" />
-                       
+
                     </Carousel.Item>
                 </Carousel>
                 {/* icon ................................................................................... */}
@@ -176,15 +199,16 @@ const Home = () => {
                 </div>
 
                 {/* output......................................................................................... */}
-                
-              
-                <Slider {...settings}>
-                {ans}
-            </Slider>
-               
+
+                <div className="carousel-container" style={{ width: '100%', padding: '20px' }}>
+                    <Slider {...settings}>
+                        {ans}
+                    </Slider>
+                </div>
+
                 {/*  .............................................................................................. */}
                 <div id='sellingPage'>
-               
+
                     <div className="hover-animation">
                         <Card style={{ width: '18rem', border: "none" }}>
                             <img src={neck} style={{ width: '18rem', height: "290px" }} className="img-back" />
@@ -236,7 +260,7 @@ const Home = () => {
                 </div>
 
             </div>
-           
+
             {/* vedios =================== */}
 
             <div id='vedioplayer' >
@@ -250,46 +274,42 @@ const Home = () => {
             <div id='Home3'>
                 <div>
                     <img src={nec} />
-                    <p>Earring Sets</p>
+                    <h5>Earring </h5>
                 </div>
                 <div>
                     <img src={choker} />
-                    <p>Choker Sets</p>
+                    <h5>Necklaces </h5>
                 </div>
                 <div>
                     <img src={c1} />
-                    <p>Rings</p>
+                    <h5>Rings</h5>
                 </div>
                 <div>
                     <img src={c2} />
-                    <p>Bridal Sets</p>
+                    <h5>Pendant</h5>
                 </div>
 
                 <div>
                     <img src={c3} />
-                    <p>Bangles</p>
+                    <h5>Bangles</h5>
                 </div>
 
                 <div>
                     <img src={c4} />
-                    <p>Mangalsutra</p>
+                    <h5>Mangalsutra</h5>
                 </div>
 
                 <div>
                     <img src={c5} />
-                    <p>Maangtika</p>
+                    <h5>Maangtika</h5>
                 </div>
 
-
             </div>
-            <div id='card'>
 
-
-            </div>
             {/* ---------------------------------------------------- */}
             <div id='home4'>
                 <div className='d1'>
-                    <Button variant="primary" style={{ backgroundColor: "black", border: "none" }}
+                    <Button variant="primary" style={{ backgroundColor: "linear-gradient(to right, #e7a4a4, #f5e1da)", border: "none",padding:"10px",width:"10%" }}
                         onClick={() => { navigate("/sale") }}>View All</Button>
                     <h2>-  Populler Collection   -</h2></div>
 
@@ -313,68 +333,32 @@ const Home = () => {
                         <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
                     </Card.Body>
                 </Card>
-
             </div>
+
             <div>
                 <Card.Img variant="top" src={g4} style={{ marginTop: '20px', marginBottom: '20px' }} />
             </div>
             {/* =================================================================================== */}
-
-            {/* <div>
-                <Carousel style={{ width: '25rem' }}>
-                    <Carousel.Item>
-                        <Card style={{ width: '23rem' }}>
-                            <Card.Img variant="top" src={g3} />
-                            <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                                <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
-                            </Card.Body>
-                        </Card>
-                    </Carousel.Item>
-                    <Carousel.Item width="23rem">
-                        <Card style={{ width: '23rem' }}>
-                            <Card.Img variant="top" src={g3} />
-                            <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                                <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
-                            </Card.Body>
-                        </Card>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <Card style={{ width: '23rem' }}>
-                            <Card.Img variant="top" src={g3} />
-                            <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                                <Card.Title style={{ textAlign: 'center' }}>Nakshtra Collection</Card.Title>
-                            </Card.Body>
-                        </Card>
-                    </Carousel.Item>
-                </Carousel>
-            </div> */}
-
-            <div id='home4'>
-                <div className='d1'>
+            <div id='home5'>
+                <div className='head3'>
                     <h2> Trending Style</h2>
                 </div>
-
-                <Card style={{ width: '23rem', height: "150px" }}>
-                    <Card.Img variant="top" src={floral} style={{ height: "350px" }} />
-                    <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
-                        <Card.Title style={{ textAlign: 'center' }}> Gold Collection</Card.Title>
-                    </Card.Body>
+                <hr />
+                <Card style={{ width: '18rem', height: "300px" }}>
+                    <Card.Img variant="top" src={floral} />
                 </Card>
 
-                <Card style={{ width: '23rem' }}>
-                    <Card.Img variant="top" src={floral2} style={{ height: "350px" }} />
-                    <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                        <Card.Title style={{ textAlign: 'center' }}>Earring Collection</Card.Title>
-                    </Card.Body>
+                <Card style={{ width: '18rem', height: "300px" }}>
+                    <Card.Img variant="top" src={floral2} />
                 </Card>
 
-                <Card style={{ width: '23rem', height: "200px" }}>
+                <Card style={{ width: '18rem', height: "250px" }}>
                     <Card.Img variant="top" src={floral3} />
-                    <Card.Body style={{ backgroundColor: 'rgb(241, 220, 223)' }}>
-                        <Card.Title style={{ textAlign: 'center' }}>Festive Jwellery</Card.Title>
-                    </Card.Body>
                 </Card>
 
+                <Card style={{ width: '18rem', height: "250px" }}>
+                    <Card.Img variant="top" src={floral4} />
+                </Card>
             </div>
 
 

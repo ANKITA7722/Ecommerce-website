@@ -10,7 +10,7 @@ const Header = () => {
     <>
       <div id='Header'>
         <Navbar expand="lg" className="bg-body-tertiary">
-          <Container>
+          <Container id='Navbar'>
             <Navbar.Brand href="#home">Diamonddelight</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -31,6 +31,7 @@ const Header = () => {
                   <NavDropdown.Item as={Link} to="LongNecklaces">Long Necklace Sets </NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="Pendant">Pandant Sets</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="choker">Chocker Sets</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="Earring" >Earrings</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="Mangalsutra">Mangalsutra</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="mangtika">Maangtika</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="ring">Rings</NavDropdown.Item>

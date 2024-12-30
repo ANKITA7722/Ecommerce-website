@@ -6,6 +6,12 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from "../cardSlice";
 import { useNavigate } from 'react-router-dom';
 
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { CiSearch } from "react-icons/ci";
+
+
+
 const Search = () => {
     const [mypro, setMyPro] = useState("");
     const [mydata, setMydata] = useState([]);
@@ -60,10 +66,20 @@ const Search = () => {
     return (
         <>
             <center>
-                <h1 align="center">Search Product</h1>
-                Enter Product Name : <input type="text"
-                    value={mypro} onChange={handleChange} />
-            </center>
+               
+<InputGroup  style={{width:"50%"}}>
+          <InputGroup.Text id="btnGroupAddon"><CiSearch /></InputGroup.Text>
+          <Form.Control
+            type="text"
+            value={mypro} onChange={handleChange}
+            placeholder="Search products"
+            aria-label="Input group example"
+            aria-describedby="btnGroupAddon"
+           
+          />
+        </InputGroup>
+
+        </center >
 
             <hr />
 

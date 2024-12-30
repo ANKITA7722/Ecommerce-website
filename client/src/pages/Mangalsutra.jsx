@@ -6,6 +6,7 @@ import axios from 'axios';
 import { addToCart } from '../cardSlice';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import img1 from "../images/Mangalsutra (1).webp"
 
 const Mangalsutra = () => {
     const [mydata, setMydata] = useState([]);
@@ -48,6 +49,10 @@ const Mangalsutra = () => {
     })
     return (
         <>
+        <div id='img1' style={{boxSizing:"border-box",paddingRight:"40px",  }}>
+                                <img src={img1}  style={{width:"100%",margin:"20px",height:"390px" }}/>
+                
+                            </div>
             <div id='CardCloudImg'>
                 {ans}
             </div>
