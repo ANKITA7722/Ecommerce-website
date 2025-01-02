@@ -31,24 +31,23 @@ res.send(Data);
 
 }
 
-const searchProduct=async(req,res)=>{
-    let proname = req.query.product;
+const searchProduct=async(req, res)=>{
+    let proname= req.query.product;
     console.log(proname);
-    const Data = await ProductModel.find({"name":{$regex:proname,$option:'i'}})
-    res.send(Data);
-}
-
-const shopProduct=async(req, res)=>{
-    const {lprice, hprice, bangle, ring,choker }=req.body;
-    console.log(lprice, hprice, bangle, ring, choker);
- 
-    const Data= await ProductModel.find({$and:[{price:{$gte:lprice}}, {price:{$lte:hprice}}, {$or:[{"category":bangle}, {"category": ring}, {"category":choker}]}   ]});
-    console.log(Data);
+    const Data= await ProductModel.find({"name":{$regex:proname, $options: 'i'}})
     res.send(Data);
  }
  
 
-
+ const shopProduct=async(req, res)=>{
+    const {lprice, hprice, Bangles, Choker, Earring }=req.body;
+    console.log(lprice, hprice,  Bangles, Choker, Earring);
+ 
+    const Data= await ProductModel.find({$and:[{price:{$gte:lprice}}, {price:{$lte:hprice}}, {$or:[{"category": Bangles}, {"category":Choker}, {"category":Earring}]}   ]});
+    console.log(Data);
+    res.send(Data);
+ }
+ 
 
 module.exports={
     productSave,

@@ -1,11 +1,12 @@
-import { useState,useEffect} from "react";
+import { useState, useEffect  } from "react";
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
 
 import Card from 'react-bootstrap/Card';
 import { useDispatch } from 'react-redux';
-import { addToCart } from "../cardSlice";
+
 import { useNavigate } from 'react-router-dom';
+import { addToCart } from "../cardSlice";
 
 const ShopProduct=()=>{
     const [input, setInput]= useState({});
@@ -29,39 +30,11 @@ const navigate= useNavigate();
     }
 
 
-  //   const handleSubmit = () => {
-  //     if (!input || typeof input !== 'object') {
-  //         alert('Invalid input data');
-  //         return;
-  //     }
-  
-  //     const api = "http://localhost:8000/product/shopproduct";
-  
-  //     axios.post(api, input)
-  //         .then((res) => {
-  //             setMydata(res.data);
-  //             console.log('Response Data:', res.data);
-  //         })
-  //         .catch((error) => {
-  //             if (error.response) {
-  //                 console.error('API Error:', error.response.data);
-  //                 alert(`Error: ${error.response.data.message || 'API Error'}`);
-  //             } else if (error.request) {
-  //                 console.error('No response received:', error.request);
-  //                 alert('Error: No response received from the server.');
-  //             } else {
-  //                 console.error('Error:', error.message);
-  //                 alert('Error: ' + error.message);
-  //             }
-  //         });
-  // };
-  
-
     const addcardData=(id, name, desc, categ, price, image)=>{
         dispatch(addToCart({id:id, name:name, description:desc, category:categ, price:price, image:image, qnty:1}))
  }
 
- const ans = mydata.map((key)=>{
+ const ans=mydata.map((key)=>{
    return(
      <>
        <Card style={{ width: '18rem', marginTop:'20px' }}>
@@ -88,6 +61,9 @@ const navigate= useNavigate();
    )
  })
 
+
+
+
     return(
         <>
          <h1 align="center"> Your Shopping Place</h1>
@@ -98,11 +74,11 @@ const navigate= useNavigate();
               <br/>
               High Price: <input type="text" name="hprice" value={input.hprice} onChange={handleInput} />
                <br />
-               <input type="checkbox" value="bangle" name="bangle" onChange={handleInput}/>  Bangles
+               <input type="checkbox" value="Bangles" name="Bangles" onChange={handleInput}/> Bangles
               <br/>
-             <input type="checkbox" value="ring" name="ring" onChange={handleInput}/> Rings
+             <input type="checkbox" value="Choker" name="Choker" onChange={handleInput}/> Choker
               <br/>
-              <input type="checkbox" value="choker" name="choker" onChange={handleInput}/> Choker
+              <input type="checkbox" value="Earring" name="Earring" onChange={handleInput}/> Earring
              <br/>
              
              <Button variant="primary" size="sm" onClick={handleSubmit}>
