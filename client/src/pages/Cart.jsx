@@ -4,6 +4,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
 import { qntyInc, qntyDec, itemRemove } from "../cardSlice";
 import { useNavigate } from "react-router-dom";
+import "../css/cartSlyce.css"; // Import CSS
 
 const Cart = () => {
   const MyCard = useSelector((state) => state.mycard.cart);
@@ -27,37 +28,37 @@ const Cart = () => {
   const Data = MyCard.map((key, index) => {
     totalAmount += key.price * key.qnty;
     return (
-      <tr key={key.id}>
+      <tr key={key.id} className="table-row">
         <td>{index + 1}</td>
         <td>
           <img src={key.image} alt={key.name} width="100" height="100" />
         </td>
-        <td>{key.name}</td>
+        <td style={{color:"#e6415a"}}>{key.name}</td>
         <td>{key.description}</td>
         <td>{key.category}</td>
-        <td>{key.price}</td>
+        <td  style={{color:"#e6415a"}}>{key.price}</td>
         <td>
-          <button
-            style={{ background: "none", border: "none" }}
-            onClick={() => qtyDecrement(key.id)}
-          >
-            <FaCircleMinus />
-          </button>
-          <span
-            style={{ marginLeft: "10px", marginRight: "10px", fontWeight: "bold" }}
-          >
-            {key.qnty}
-          </span>
-          <button
-            style={{ background: "none", border: "none" }}
-            onClick={() => qtyIncrement(key.id)}
-          >
-            <FaPlusCircle />
-          </button>
+          <div className="quantity-controls">
+            <button
+              className="qty-button"
+              onClick={() => qtyDecrement(key.id)}
+            >
+              <FaCircleMinus />
+            </button>
+            <span className="quantity">{key.qnty}</span>
+            <button
+              className="qty-button"
+              onClick={() => qtyIncrement(key.id)}
+            >
+              <FaPlusCircle />
+            </button>
+          </div>
         </td>
         <td>{key.price * key.qnty}</td>
         <td>
-          <button onClick={() => removeItem(key.id)}>Remove</button>
+          <button className="action-button" onClick={() => removeItem(key.id)}>
+            Remove
+          </button>
         </td>
       </tr>
     );
@@ -65,8 +66,7 @@ const Cart = () => {
 
   return (
     <>
-      <h1>My Shopping Cart</h1>
-      <Table striped bordered hover>
+      <Table striped bordered hover className="interactive-table">
         <thead>
           <tr>
             <th>#</th>
@@ -87,7 +87,9 @@ const Cart = () => {
             <td style={{ fontWeight: "bold" }}>Total Amount:</td>
             <td>{totalAmount}</td>
             <td colSpan="2">
-              <button onClick={() => navigate("/checkout")}>CheckOut</button>
+              <button className="checkout-button" onClick={() => navigate("/checkout")}>
+                CheckOut
+              </button>
             </td>
           </tr>
         </tbody>

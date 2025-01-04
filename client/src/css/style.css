@@ -123,6 +123,7 @@ hr {
   width: 100%;
   text-align: center;
   color:#e6415a;
+  background-color: lightgrey;
 }
 
 .head3 {
@@ -174,8 +175,6 @@ hr {
     transition: all 0.8s ease;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .img-back:hover {
@@ -225,10 +224,10 @@ hr {
     font-style: arial;
 }
 
-#CardSection div{
+/* #CardSection div{
 margin-top: 10px;
 margin-bottom: 10px;
-}
+} */
 #CardCloudImg{
     display: flex;
     flex-wrap: wrap;
@@ -268,7 +267,6 @@ margin-bottom: 10px;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 #collection3 img{
     height: 500px;
 }
@@ -623,3 +621,36 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.carousel-container{
+  padding: 20px;
+  width:100%;
+  background-color: whitesmoke;
+}
+
+/* Styling for the button */
+.AddButton {
+  width: 100%;
+  color:black;
+  background-color: white;
+  border: 1px solid black;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.AddButton:hover {
+  color: white;
+  background-color: black;
+  transform: scale(1.05);
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+

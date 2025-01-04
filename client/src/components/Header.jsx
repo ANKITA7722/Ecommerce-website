@@ -2,10 +2,29 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
+import { useState } from 'react';
+
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { CiSearch } from "react-icons/ci";
 
 
 const Header = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearchChange = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+    
+    // Trigger search and navigate to search page
+    if (term.trim() !== "") {
+      navigate(`/search/?product=${term}`);
+    }
+  };
+
+
   return (
     <>
       <div id='Header'>
@@ -44,12 +63,23 @@ const Header = () => {
                 <Nav.Link as={Link} to="radytoship">READY TO SHIP</Nav.Link>
 
                 <Nav.Link as={Link} to="sale">SALE</Nav.Link>
-                <Nav.Link as={Link} to="cart">MyCart</Nav.Link>
+                {/* <Nav.Link as={Link} to="cart">MyCart</Nav.Link> */}
                 <Nav.Link as={Link} to="search">Search</Nav.Link>
                 <Nav.Link as={Link} to="shop">Shop</Nav.Link>
-                <Nav.Link as={Link} to="cardslider">cardslider</Nav.Link>
+               
 
               </Nav>
+
+              <InputGroup  style={{width:"20%"}}>
+          <InputGroup.Text id="btnGroupAddon"><CiSearch /></InputGroup.Text>
+          <Form.Control
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              placeholder="Search"
+              className="me-2"
+            />
+           </InputGroup>
             </Navbar.Collapse>
           </Container>
         </Navbar>

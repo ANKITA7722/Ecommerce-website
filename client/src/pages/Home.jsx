@@ -55,6 +55,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import "../css/style.css";
+
 
 const Home = () => {
 
@@ -137,19 +139,42 @@ const Home = () => {
     const ans = mydata.map((key) => {
         return (
             <>
-
-                <Card style={{ width: '18rem' }}>
-                    <a href="#" onClick={() => { navigate(`/prodetail/${key._id}`) }}>
-                        <Card.Img variant="top" src={key.image} />
+                <Card style={{ width: "18rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", borderRadius: "10px" }}>
+                    <a href="#" onClick={() => navigate(`/prodetail/${key._id}`)}>
+                        <Card.Img
+                            variant="top"
+                            src={key.image}
+                            style={{ borderTopLeftRadius: "10px", borderTopRightRadius: "10px", transition: "transform 0.3s" }}
+                            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                        />
                     </a>
 
+                    <Card.Body style={{ backgroundColor: "white", padding: "20px" }}>
+                        <Card.Title style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.2rem" }}>{key.name}</Card.Title>
+                        <Card.Text style={{ textAlign: "center", fontSize: "1rem", color: "#555", fontWeight: "700" }}>RS. {key.price}</Card.Text>
+                        <Button
+                            style={{
+                                width: "100%",
+                                color: "#e6415a",
+                                backgroundColor: "lightgrey",
+                                border: "none",
+                                transition: "background-color 0.3s, color 0.3s",
+                                fontWeight: 700,
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = "white";
+                                e.currentTarget.style.backgroundColor = "black";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = "#e6415a";
+                                e.currentTarget.style.backgroundColor = "white";
+                            }}
+                            onClick={() => addcardData(key._id, key.name, key.description, key.category, key.price, key.image)}
+                        >
+                            Add to Card
+                        </Button>
 
-                    <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
-                        <Card.Title style={{ textAlign: 'center' }}> {key.name}</Card.Title>
-                        <Card.Text> RS. {key.price}</Card.Text>
-                        <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
-                            onClick={() => { addcardData(key._id, key.name, key.description, key.category, key.price, key.image) }}>
-                            Add to Card</Button>
                     </Card.Body>
                 </Card>
 
@@ -194,7 +219,7 @@ const Home = () => {
             </div>
             {/* New ariival................................................................................... */}
             <div id='CardSection'>
-                <div id="NewArival"><h3>NEW ARIVAL</h3>
+                <div id="NewArival" ><h3>NEW ARIVAL</h3>
                     <p>Explore New Style of the Season</p>
                 </div>
 
@@ -309,7 +334,7 @@ const Home = () => {
             {/* ---------------------------------------------------- */}
             <div id='home4'>
                 <div className='d1'>
-                    <Button variant="primary" style={{ backgroundColor: "linear-gradient(to right, #e7a4a4, #f5e1da)", border: "none",padding:"10px",width:"10%" }}
+                    <Button variant="primary" style={{ backgroundColor: "black", border: "none", padding: "10px", width: "10%", color: "white" }}
                         onClick={() => { navigate("/sale") }}>View All</Button>
                     <h2>-  Populler Collection   -</h2></div>
 

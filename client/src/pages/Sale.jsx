@@ -41,20 +41,44 @@ const Sale = () => {
     const ans = mydata.map((key) => {
         return (
             <>
-               <Card style={{ width: '19rem'}}>
-                <a href="#" onClick={()=>{navigate(`/prodetail/${key._id}`)}}>
-                     <Card.Img variant="top" src={key.image} />
-                </a>
-                   
+              <Card style={{ width: "20rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", borderRadius: "10px" }}>
+      <a href="#" onClick={() => navigate(`/prodetail/${key._id}`)}>
+        <Card.Img
+          variant="top"
+          src={key.image}
+          style={{ borderTopLeftRadius: "10px", borderTopRightRadius: "10px", transition: "transform 0.3s" }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        />
+      </a>
 
-                    <Card.Body style={{ backgroundColor: ' rgb(248, 227, 233)' }}>
-                        <Card.Title style={{ textAlign: 'center' }}> {key.name}</Card.Title>
-                        <Card.Text> ₹  {key.price}</Card.Text>
-                        <Button  style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}
-                        onClick={()=>{addcardData(key._id,key.name,key.description,key.category,key.price,key.image)}}>
-                            Add to Card</Button>
-                    </Card.Body>
-                </Card>
+      <Card.Body style={{ backgroundColor: "white", padding: "20px" }}>
+        <Card.Title style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.2rem" }}>{key.name}</Card.Title>
+        <Card.Text style={{ textAlign: "center", fontSize: "1rem", color: "#555",fontWeight:"700" }}>RS. {key.price}</Card.Text>
+        <Button
+  style={{
+    width: "100%",
+    color: "#e6415a",
+    backgroundColor: "lightgrey",
+    border: "none",
+    transition: "background-color 0.3s, color 0.3s",
+    fontWeight:700,
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.color = "white";
+    e.currentTarget.style.backgroundColor = "black";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.color = "#e6415a";
+    e.currentTarget.style.backgroundColor = "white";
+  }}
+  onClick={() => addcardData(key._id, key.name, key.description, key.category, key.price, key.image)}
+>
+  Add to Card
+</Button>
+
+      </Card.Body>
+    </Card>
             </>
         )
     })

@@ -40,10 +40,11 @@ const searchProduct=async(req, res)=>{
  
 
  const shopProduct=async(req, res)=>{
-    const {lprice, hprice, Bangles, Choker, Earring }=req.body;
-    console.log(lprice, hprice,  Bangles, Choker, Earring);
+    const {lprice, hprice, Bangles, Choker, Earring,LongNecklaces,Mangalsutra,Pendant,Necklass }=req.body;
+    console.log(lprice, hprice,  Bangles, Choker, Earring,LongNecklaces,Mangalsutra,Pendant,Necklass);
  
-    const Data= await ProductModel.find({$and:[{price:{$gte:lprice}}, {price:{$lte:hprice}}, {$or:[{"category": Bangles}, {"category":Choker}, {"category":Earring}]}   ]});
+    const Data= await ProductModel.find({$and:[{price:{$gte:lprice}}, {price:{$lte:hprice}}, {$or:[{"category": Bangles}, {"category":Choker}, {"category":Earring},
+        {"category":LongNecklaces},{"category":Mangalsutra},{"category":Pendant},{"category":Necklass}]}   ]});
     console.log(Data);
     res.send(Data);
  }
