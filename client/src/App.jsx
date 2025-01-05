@@ -22,6 +22,8 @@ import ShopProduct from "./pages/ShopProduct";
 import CheckOut from "./pages/CheckOut";
 import CardSlider from "./pages/cardSlider";
 import Pendent from "./pages/Pendant";
+import CustomerDetails from "./admin/CtomerDetails";
+
 
 
 
@@ -55,10 +57,14 @@ const App = () => {
             <Route path="checkout" element={<CheckOut/>} />
             <Route path="shop" element={<ShopProduct/>} />
             <Route path="cardslider" element={<CardSlider/>} />
+
           </Route>
           <Route>
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/insertproduct" element={<InsertProduct />} />
+            <Route path="customerdetails" element={<CustomerDetails/>} />
+            {/* <Route path="cardslider" element={<CardSlider/>} /> */}
+
           </Route>
         </Routes>
       </BrowserRouter>

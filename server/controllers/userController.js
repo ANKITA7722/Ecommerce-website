@@ -1,9 +1,10 @@
-const UserModel= require("../models/userModel");
+const userModel = require("../models/userModel");
+// const UserModel= require("../models/userModel");
 
 
 const customerSave=async(req, res)=>{
     const {name, address, city, pincode, mobile, proname, price}=req.body;
-    await UserModel.create({
+    await userModel.create({
 
         name:name,
         address:address, 
@@ -16,6 +17,13 @@ const customerSave=async(req, res)=>{
   res.send("User Created!!!");
 }
 
+const ShowUserData=async(req,res)=>{
+     const data=await userModel.find();
+    //  console.log(data);
+        res.send(data);
+}
+
 module.exports={
-    customerSave
+    customerSave,
+    ShowUserData
 }

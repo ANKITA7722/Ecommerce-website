@@ -86,13 +86,20 @@ hr {
 #home4 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content:space-around; */
     margin-top: 10px;
     margin-bottom: 20px;
+    column-gap: 20px;
+    
     /* overflow: hidden; */
 
 }
+#home4 .div .Card{
+ 
+   margin-left: 100px;
+    column-gap: 20px;
 
+}
 #home4 .d1 {
     width: 100%;
     text-align: center;
@@ -106,7 +113,7 @@ hr {
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
-    margin: 20px 0;
+     margin: 20px 0;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
 }
@@ -123,7 +130,7 @@ hr {
   width: 100%;
   text-align: center;
   color:#e6415a;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
 }
 
 .head3 {
@@ -150,6 +157,7 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+   
 
 }
 
@@ -475,8 +483,9 @@ margin-bottom: 10px;
 #vedioplayer{
     
     display: flex;
-    justify-content: space-around;
-    column-gap: 20px;
+    /* justify-content:baseline; */
+    /* flex-wrap: wrap; */
+    /* column-gap: 20px; */
     margin-top: 20px;
   margin-bottom: 20px;
 }

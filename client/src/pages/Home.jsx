@@ -239,9 +239,29 @@ const Home = () => {
                             <img src={neck} style={{ width: '18rem', height: "290px" }} className="img-back" />
                             <img src={ring1} style={{ width: '18rem', height: "290px" }} />
                             <Card.Body style={{}}>
-                                <Card.Text> custer gold ring</Card.Text>
-                                <p>rs</p>
-                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                                <Card.Text style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.2rem" }}> Dangler Earrings</Card.Text>
+                                <p style={{ textAlign: "center", fontSize: "1rem", color: "#555", fontWeight: "700" }}>rs 299</p>
+                                <Button
+                            style={{
+                                width: "100%",
+                                color: "#e6415a",
+                                backgroundColor: "lightgrey",
+                                border: "none",
+                                transition: "background-color 0.3s, color 0.3s",
+                                fontWeight: 700,
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = "white";
+                                e.currentTarget.style.backgroundColor = "black";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = "#e6415a";
+                                e.currentTarget.style.backgroundColor = "white";
+                            }}
+                            
+                        >
+                            Add to Card
+                        </Button>
                             </Card.Body>
                         </Card>
                     </div>
@@ -252,9 +272,29 @@ const Home = () => {
                             <img src={neck2} style={{ width: '18rem', height: "290px" }} className="img-back" />
                             <img src={neck2} style={{ width: '18rem', height: "290px" }} />
                             <Card.Body style={{}}>
-                                <Card.Text> custer gold ring</Card.Text>
-                                <p>rs</p>
-                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                                <Card.Text style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.2rem" }}> Mio Necklace</Card.Text>
+                                <p style={{ textAlign: "center", fontSize: "1rem", color: "#555", fontWeight: "700" }}>rs 8000</p>
+                                <Button
+                            style={{
+                                width: "100%",
+                                color: "#e6415a",
+                                backgroundColor: "lightgrey",
+                                border: "none",
+                                transition: "background-color 0.3s, color 0.3s",
+                                fontWeight: 700,
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = "white";
+                                e.currentTarget.style.backgroundColor = "black";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = "#e6415a";
+                                e.currentTarget.style.backgroundColor = "white";
+                            }}
+                            
+                        >
+                            Add to Card
+                        </Button>
                             </Card.Body>
                         </Card>
                     </div>
@@ -264,9 +304,29 @@ const Home = () => {
                             <img src={bangle} style={{ width: '18rem', height: "290px" }} className="img-back" />
                             <img src={bangle2} style={{ width: '18rem', height: "290px" }} />
                             <Card.Body style={{}}>
-                                <Card.Text> custer gold ring</Card.Text>
-                                <p>rs</p>
-                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                                <Card.Text style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.2rem" }}>Bangles & Bracelet </Card.Text>
+                                <p style={{ textAlign: "center", fontSize: "1rem", color: "#555", fontWeight: "700" }}>rs 3200</p>
+                                <Button
+                            style={{
+                                width: "100%",
+                                color: "#e6415a",
+                                backgroundColor: "lightgrey",
+                                border: "none",
+                                transition: "background-color 0.3s, color 0.3s",
+                                fontWeight: 700,
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = "white";
+                                e.currentTarget.style.backgroundColor = "black";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = "#e6415a";
+                                e.currentTarget.style.backgroundColor = "white";
+                            }}
+                            
+                        >
+                            Add to Card
+                        </Button>
                             </Card.Body>
                         </Card>
                     </div>
@@ -276,9 +336,29 @@ const Home = () => {
                             <img src={earing1} style={{ width: '18rem', height: "290px" }} className="img-back" />
                             <img src={earing} style={{ width: '18rem', height: "290px" }} />
                             <Card.Body style={{}}>
-                                <Card.Text> custer gold ring</Card.Text>
-                                <p>rs</p>
-                                <Button style={{ width: "100%", color: "black", backgroundColor: "white", border: "1px solid black" }}>Add to Card</Button>
+                                <Card.Text style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.2rem" }}>Jhumka Earrings</Card.Text>
+                                <p style={{ textAlign: "center", fontSize: "1rem", color: "#555", fontWeight: "700" }}>rs 2200</p>
+                                <Button
+                            style={{
+                                width: "100%",
+                                color: "#e6415a",
+                                backgroundColor: "lightgrey",
+                                border: "none",
+                                transition: "background-color 0.3s, color 0.3s",
+                                fontWeight: 700,
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = "white";
+                                e.currentTarget.style.backgroundColor = "black";
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = "#e6415a";
+                                e.currentTarget.style.backgroundColor = "white";
+                            }}
+                            
+                        >
+                            Add to Card
+                        </Button>
                             </Card.Body>
                         </Card>
                     </div>
@@ -298,34 +378,34 @@ const Home = () => {
 
             <div id='Home3'>
                 <div>
-                    <img src={nec} />
+                    <img src={nec} onClick={() => { navigate("/Earring")}}/>
                     <h5>Earring </h5>
                 </div>
                 <div>
-                    <img src={choker} />
+                    <img src={choker} onClick={() => { navigate("/Necklass")}}/>
                     <h5>Necklaces </h5>
                 </div>
                 <div>
-                    <img src={c1} />
+                    <img src={c1} onClick={() => { navigate("/ring")}}/>
                     <h5>Rings</h5>
                 </div>
                 <div>
-                    <img src={c2} />
+                    <img src={c2} onClick={() => { navigate("/Pendant")}}/>
                     <h5>Pendant</h5>
                 </div>
 
                 <div>
-                    <img src={c3} />
+                    <img src={c3} onClick={() => { navigate("/bangle")}}/>
                     <h5>Bangles</h5>
                 </div>
 
                 <div>
-                    <img src={c4} />
+                    <img src={c4} onClick={() => { navigate("/Mangalsutra")}}/>
                     <h5>Mangalsutra</h5>
                 </div>
 
                 <div>
-                    <img src={c5} />
+                    <img src={c5}  onClick={() => { navigate("/mangtika")}}/>
                     <h5>Maangtika</h5>
                 </div>
 
@@ -338,7 +418,7 @@ const Home = () => {
                         onClick={() => { navigate("/sale") }}>View All</Button>
                     <h2>-  Populler Collection   -</h2></div>
 
-                <Card style={{ width: '23rem' }}>
+                <Card style={{ width: '23rem',marginLeft:"100px" }}>
                     <Card.Img variant="top" src={g2} />
                     <Card.Body style={{ backgroundColor: ' rgb(245, 206, 212)' }}>
                         <Card.Title style={{ textAlign: 'center' }}> Antique Collection</Card.Title>
@@ -369,20 +449,20 @@ const Home = () => {
                     <h2> Trending Style</h2>
                 </div>
                 <hr />
-                <Card style={{ width: '18rem', height: "300px" }}>
-                    <Card.Img variant="top" src={floral} />
+                <Card style={{ width: '18rem', height: "300px" }} >
+                    <Card.Img variant="top" src={floral} onClick={() => { navigate("/Pendant")}}/>
                 </Card>
 
                 <Card style={{ width: '18rem', height: "300px" }}>
-                    <Card.Img variant="top" src={floral2} />
+                    <Card.Img variant="top" src={floral2} onClick={() => { navigate("/Pendant")}}/>
                 </Card>
 
                 <Card style={{ width: '18rem', height: "250px" }}>
-                    <Card.Img variant="top" src={floral3} />
+                    <Card.Img variant="top" src={floral3} onClick={() => { navigate("/Necklass")}} />
                 </Card>
 
                 <Card style={{ width: '18rem', height: "250px" }}>
-                    <Card.Img variant="top" src={floral4} />
+                    <Card.Img variant="top" src={floral4} onClick={() => { navigate("/Necklass")}}/>
                 </Card>
             </div>
 
