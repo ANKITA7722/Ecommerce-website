@@ -47,9 +47,10 @@ const CustomerDetails=()=>{
           borderRadius: "12px",
           marginBottom: "20px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          textTransform:"uppercase"
         }}
       >
-        User DEtail
+       Display User Details 
       </h3>
          <Table 
         striped bordered hover 

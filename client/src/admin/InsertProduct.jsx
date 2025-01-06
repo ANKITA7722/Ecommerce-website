@@ -45,9 +45,22 @@ const InsertProduct = () => {
 
   return (
     <>
+    <h3 
+         style={{
+          backgroundColor: "#ff9999",
+          color: "#fff",
+          textAlign: "center",
+          padding: "15px 30px",
+          borderRadius: "12px",
+          marginBottom: "20px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        INSERT PRODUCT DETAILS
+      </h3>
 
     <div id='insertpage'>
-      <h1 style={{marginLeft:"100px"}}>Insert New Product</h1>
+    
       <Form style={{ width: '600px' }} onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formProductName">
           <Form.Label>Enter Product Name</Form.Label>
